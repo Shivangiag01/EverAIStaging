@@ -1,5 +1,9 @@
 package everailabs.EverAIDashboard;
 
-public class HomePageTest {
+import everailabs.ReferenceClasses.BasicInitialization;
+
+public class HomePageTest extends BasicInitialization {
+	
+	
 
 }

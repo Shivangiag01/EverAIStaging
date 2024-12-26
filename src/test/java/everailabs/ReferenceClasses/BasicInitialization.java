@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
@@ -14,20 +17,28 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import everailabs.Locators.LoginPageLocators;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasicInitialization {
-	public WebDriver driver;
+	public static WebDriver driver;
+	private static boolean sharedBrowserSession = false;
+	protected LoginPageLocators lp;
 
 	public WebDriver browserSelection() throws IOException {
 		Properties prop = new Properties();
-		FileInputStream globaldatafile = new FileInputStream(System.getProperty("user.dir") + "src\\main\\resources\\GlobalProp.properties");
+		FileInputStream globaldatafile = new FileInputStream(
+				System.getProperty("user.dir") + "\\src\\main\\resources\\GlobalProp.properties");
 		prop.load(globaldatafile);
 		String browsername = prop.getProperty("browser");
 		if (browsername.equalsIgnoreCase("chrome")) {
@@ -43,35 +54,53 @@ public class BasicInitialization {
 		return driver;
 	}
 
-	@BeforeTest
+	@BeforeMethod
 	public void launchApp() throws IOException {
-		driver = browserSelection();
-		driver.manage().window().maximize();
-		driver.get("");
-	}
-	
-	
-	public List<HashMap<String,String>> getJsonData(String filename) throws IOException {
-        String jsondata= FileUtils.readFileToString(new File(filename),StandardCharsets.UTF_8);		
-		ObjectMapper mapper= new ObjectMapper();
-		List<HashMap<String,String>> map= mapper.readValue(jsondata, new TypeReference<List<HashMap<String,String>>>(){});
-	    return map;
+		if (driver == null || !sharedBrowserSession) {
+			driver = browserSelection();
+			driver.manage().window().maximize();
+			driver.get("https://calm-sand-0ddc4e70f-preview.eastus2.4.azurestaticapps.net");
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			lp = new LoginPageLocators(driver);
+		}
 	}
 
-	
+	public List<HashMap<String, String>> getJsonData(String filename) throws IOException {
+		String jsondata = FileUtils.readFileToString(new File(filename), StandardCharsets.UTF_8);
+		ObjectMapper mapper = new ObjectMapper();
+		List<HashMap<String, String>> map = mapper.readValue(jsondata,
+				new TypeReference<List<HashMap<String, String>>>() {
+				});
+		return map;
+	}
+
 	public String getScreenShot(String testcasename) throws IOException {
-		TakesScreenshot ts= (TakesScreenshot)driver;
-		File source= ts.getScreenshotAs(OutputType.FILE);
-		String screenshotfilepath= System.getProperty("user.dir")+"//Reports//"+testcasename+".png";
-		File dest= new File(screenshotfilepath);
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		String screenshotfilepath = System.getProperty("user.dir") + "//Reports//" + testcasename + "_" + timestamp
+				+ ".png";
+		File dest = new File(screenshotfilepath);
 		FileUtils.copyFile(source, dest);
 		return screenshotfilepath;
 	}
-	
-	
-	@AfterTest
+
+	@AfterMethod
 	public void exit() {
-		driver.quit();
+		if (!sharedBrowserSession && driver != null) {
+			System.out.println("Closing browser...");
+			driver.quit();
+			driver = null; // Reset driver to ensure a fresh instance
+		}
+	}
+
+	public static void enableSharedBrowserSession() {
+		sharedBrowserSession = true;
+	}
+
+	// Disable shared browser session
+	public static void disableSharedBrowserSession() {
+		sharedBrowserSession = false;
 	}
 
 }

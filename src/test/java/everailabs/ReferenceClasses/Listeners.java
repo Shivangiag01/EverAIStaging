@@ -12,40 +12,47 @@ import com.aventstack.extentreports.Status;
 
 import everailabs.Abstraction.ExtentClass;
 
-public class Listeners extends BasicInitialization implements ITestListener{
+public class Listeners extends BasicInitialization implements ITestListener {
 
-	ExtentTest test;
-	ExtentClass ec= new ExtentClass();
-	ExtentReports ep= ec.getextentReportObject();
-	
+	private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
+
+	ExtentClass ec = new ExtentClass();
+	ExtentReports ep = ec.getextentReportObject();
+
 	@Override
 	public void onTestStart(ITestResult result) {
-		 test= ep.createTest(result.getMethod().getMethodName());
-		 System.out.println("Test Started: " + result.getMethod().getMethodName());
-	     System.out.println("Driver instance: " + driver);
+		ExtentTest test = ep.createTest("onTestStart triggered for: " +result.getMethod().getMethodName());
+		extentTest.set(test);
+		System.out.println("Test Started: " + result.getMethod().getMethodName());
+		System.out.println("Driver instance: " + driver);
 		ITestListener.super.onTestStart(result);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		test.log(Status.PASS, "Test Passed");
+		extentTest.get().log(Status.PASS, "Test Passed");
 		ITestListener.super.onTestSuccess(result);
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-	  test.fail(result.getThrowable());
-	  String screenshotpath=null;
-	  try {
-		  screenshotpath= getScreenShot(result.getMethod().getMethodName());
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+		ExtentTest test = extentTest.get();
+		if (test == null) {
+	        System.out.println("ExtentTest is null for: " + result.getMethod().getMethodName());
+	        return;
+	    }
+		test.fail(result.getThrowable());
+		String screenshotpath = null;
+		try {
+			screenshotpath = getScreenShot(result.getMethod().getMethodName());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (screenshotpath != null) {
+			test.addScreenCaptureFromPath(screenshotpath, result.getMethod().getMethodName());
+		}
 	}
-	  if (screenshotpath != null) {
-	  test.addScreenCaptureFromPath(screenshotpath, result.getMethod().getMethodName());}
-	}
-	
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
@@ -75,8 +82,5 @@ public class Listeners extends BasicInitialization implements ITestListener{
 	public void onFinish(ITestContext context) {
 		ep.flush();
 	}
-	
-	
-	
 
 }

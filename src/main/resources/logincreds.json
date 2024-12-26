@@ -1,32 +1,92 @@
 [
 	{
-		"username":"",
-		"password":""		
+		"useremail":"maneeshsingh1@weareverise.com",
+		"password":"admin@123"	,
+		"username":"Maneesh Singh"	
+	},		
+	{
+		"useremail":"MANEESHsingh@weareverise.com",
+		"password":"admin@123",
+		"username":"Maneesh Singh"			
 	},	
 	{
-			"username":"",
-			"password":""		
-		},	
-			{
-				"username":"",
-				"password":""		
-			},	
-			{
-					"username":"",
-					"password":""		
-				},	
-				{
-						"username":"",
-						"password":""		
-					},	
-					{
-							"username":"",
-							"password":""		
-						},	
-						{
-								"username":"",
-								"password":""		
-							},	
-	
-	
+		"useremail":"maneesh_singh1@weareverise.com",
+		"password":"admin@123"	,
+		"username":"Maneesh Singh"	
+	},					
+	{
+		"useremail":"  maneesh_singh1@weareverise.com  ",
+		"password":"admin@123"	,
+		"username":"Maneesh Singh"		
+	},
+	{
+		"useremail":"  maneeshsingh1@weareverise.com   ",
+		 "password":"   admin@123   "	,
+		"username":"Maneesh Singh"		
+	},
+	{
+		"useremail":"maneeshsingh1@weareverise",
+		"password":"admin@123"	,
+		"username":"Maneesh Singh"		
+	},
+	{
+		"useremail":"maneeshsingh1weareverise.com",
+		 "password":"admin@123"	,
+		"username":"Maneesh Singh"		
+	},
+	{
+		"useremail":"@maneeshsingh1@weareverise.com",
+		"password":"admin@123"	,
+		"username":"Maneesh Singh"		
+	},
+	{
+		"useremail":"maneeshsingh1@@weareverise.com",
+		"password":"admin@123"	,
+		"username":"Maneesh Singh"		
+	},
+	{
+		"useremail":"maneeshsingh1#weareverise.com",
+		"password":"admin@123"	,
+		"username":"Maneesh Singh"		
+	},
+	{
+		"useremail":"maneesh  singh1@weareverise.com",
+		"password":"admin@123"	,
+		"username":"Maneesh Singh"		
+	},
+	{
+			"useremail":"maneeshsinghh1@weareverise.com",
+			"password":"admin@123"	,
+			"username":"Maneesh Singh"		
+	},
+	{
+			"useremail":"maneeshsingh1@weareverise.com",
+			"password":"admin@1234"	,
+			"username":"Maneesh Singh"		
+	},
+	{
+			"useremail":"maneeshsingh11@weareverise.com",
+			"password":"admin@1234"	,
+			"username":"Maneesh Singh"		
+	},
+	{
+			"useremail":"maneeshsingh1@gmail.com",
+			"password":"admin@123"	,
+			"username":"Maneesh Singh"		
+	},
+	{
+			"useremail":"shivangi@weareverise.com",
+			"password":"admin@123"	,
+			"username":"Shivangi"		
+	},
+	{
+			"useremail":"",
+			"password":"admin@123"	,
+			"username":"Maneesh Singh"		
+	},
+	{
+		"useremail":"maneeshsingh1@weareverise.com",
+		"password":""	,
+		"username":"Maneesh Singh"		
+	}
 ]

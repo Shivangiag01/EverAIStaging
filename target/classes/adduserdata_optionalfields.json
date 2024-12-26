@@ -1,0 +1,79 @@
+[
+  {
+	"firstname": "Frank",
+	"lastname": "Adams",
+	"email": "frank.adams@example.com",
+    "contactno": "9876543210",
+	"date":null,
+	"division":null,
+    "classID": "CLS_001",
+    "internalID": "INT-123",
+    "externalID": "EXT#567"
+  },
+  {
+	"firstname": "Eve",
+	"lastname": "Taylor",
+	"email": "eve.taylor@example.com",
+    "contactno": "",
+	"date":null,
+	"division":null,
+    "classID": "CLS-002",
+    "internalID": "INT_456",
+    "externalID": "EXT#789"
+  },
+  {
+    "firstname": "Michael",
+    "lastname": "Johnson",
+    "email": "michael.johnson89@example.com",
+    "contactno": "9988776655",
+	"date":null,
+	"division":null,
+    "classID": "",
+    "internalID": "INT-789",
+    "externalID": "EXT#123"
+  },
+  {
+    "firstname": "Emily",
+    "lastname": "Davis",
+    "email": "emily.davis76@example.com",
+    "contactno": "64738226272",
+	"date":null,
+	"division":null,
+    "classID": "CLS-004",
+    "internalID": "",
+    "externalID": "EXT#456"
+  },
+  {
+    "firstname": "William",
+    "lastname": "Brown",
+    "email": "william.brown23@example.com",
+    "contactno": "9865432109",
+	"date":null,
+	"division":null,
+    "classID": "CLS-006",
+    "internalID": "INT-567",
+    "externalID": ""
+  },
+  {
+	"firstname": "Bob",
+	"lastname": "Williams",
+	"email": "bob.williams@example.com",
+    "contactno": "9876545678",
+  	"date":"null",
+  	"division":null,
+    "classID": "CLS_010",
+    "internalID": "INT-123",
+    "externalID": "EXT#890"
+   },
+ {
+	"firstname": "Charlie",
+	"lastname": "Brown",
+	"email": "charlie.brown@example.com",
+    "contactno": "9876545678",
+   	"date":null,
+   	"division":"null",
+    "classID": "CLS_010",
+    "internalID": "INT-123",
+    "externalID": "EXT#890"
+ }
+]
