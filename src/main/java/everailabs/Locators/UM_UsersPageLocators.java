@@ -101,6 +101,9 @@ public class UM_UsersPageLocators extends AbstractMethodClass {
 	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/div/h6")
 	List<WebElement> rolelist;
 
+	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/div/h6")
+	List<WebElement> rolelist1;
+	
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement button;
 	
