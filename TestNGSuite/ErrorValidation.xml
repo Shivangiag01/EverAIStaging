@@ -7,12 +7,7 @@
 	<test thread-count="1" name="Test">
 		<classes>
 			<class name="everailabs.EverAIDashboard.ErrorLoginValidation">
-			<methods>
-			<exclude name="tc_001_verifyinvalidEmailLogin"></exclude>
-			<exclude name="tc_002_verifyinvalidcred"></exclude>
-			</methods>
-			</class>
-			
+			</class>			
 		</classes>
 	</test> <!--
 	Test -->

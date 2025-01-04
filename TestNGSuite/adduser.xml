@@ -7,14 +7,16 @@
 	<test thread-count="1" name="Login and Add User">
 		<classes>
 			<class name="everailabs.EverAIDashboard.LoginValidation">
-			 <methods>
-                    <include name="tc_003_login" />
-                </methods>
+				<methods>
+					<include name="tc_003_login" />
+				</methods>
 			</class>
 			<class name="everailabs.EverAIDashboard.UserManagementTest">
-			 <methods>
-                    <include name="tc_002_verifyAddUserWithOptionalFields" />
-                </methods>
+				<methods>
+					<include
+						name="tc_004_verifyAddUserWithOptionalFields"></include>
+						
+				</methods>
 			</class>
 		</classes>
 	</test> <!--

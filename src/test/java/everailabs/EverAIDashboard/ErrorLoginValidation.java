@@ -26,9 +26,9 @@ public class ErrorLoginValidation extends BasicInitialization{
 	}
 	
 	@Test(dataProvider="getData2")
-	public void tc_002_missingfield(HashMap<String,String> input) {		
-		boolean errormsg= lp.verifyMissingFieldValueError(input.get("useremail"), input.get("password"));	
-		Assert.assertEquals(errormsg, false);
+	public void tc_003_missingfield(HashMap<String,String> input) {		
+		boolean buttonstate= lp.verifyMissingFieldValueError(input.get("useremail"), input.get("password"));	
+		Assert.assertEquals(buttonstate, false);
 	}
 	
 	

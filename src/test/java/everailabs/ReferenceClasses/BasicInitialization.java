@@ -4,8 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +20,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -28,12 +30,16 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import everailabs.Locators.LoginPageLocators;
+import everailabs.Locators.UM_RolesPageLocators;
+import everailabs.Locators.UM_UsersPageLocators;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasicInitialization {
 	public static WebDriver driver;
 	private static boolean sharedBrowserSession = false;
 	protected LoginPageLocators lp;
+	protected UM_UsersPageLocators um;
+	protected UM_RolesPageLocators umr;
 
 	public WebDriver browserSelection() throws IOException {
 		Properties prop = new Properties();
@@ -62,6 +68,8 @@ public class BasicInitialization {
 			driver.get("https://calm-sand-0ddc4e70f-preview.eastus2.4.azurestaticapps.net");
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			lp = new LoginPageLocators(driver);
+			um= new UM_UsersPageLocators(driver);
+			
 		}
 	}
 
@@ -76,8 +84,9 @@ public class BasicInitialization {
 
 	public String getScreenShot(String testcasename) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;
-		String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-		File source = ts.getScreenshotAs(OutputType.FILE);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+	    String timestamp = LocalDateTime.now().format(formatter);
+	    	File source = ts.getScreenshotAs(OutputType.FILE);
 		String screenshotfilepath = System.getProperty("user.dir") + "//Reports//" + testcasename + "_" + timestamp
 				+ ".png";
 		File dest = new File(screenshotfilepath);
@@ -85,7 +94,7 @@ public class BasicInitialization {
 		return screenshotfilepath;
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void exit() {
 		if (!sharedBrowserSession && driver != null) {
 			System.out.println("Closing browser...");
@@ -93,14 +102,24 @@ public class BasicInitialization {
 			driver = null; // Reset driver to ensure a fresh instance
 		}
 	}
-
-	public static void enableSharedBrowserSession() {
+	
+	public  void enableSharedBrowserSession() {
 		sharedBrowserSession = true;
 	}
 
-	// Disable shared browser session
-	public static void disableSharedBrowserSession() {
+	public void disableSharedBrowserSession() {
 		sharedBrowserSession = false;
 	}
 
+	/*
+	@AfterSuite(alwaysRun = true)
+	public void closeBrowser() {
+	    if (driver != null) {
+	        System.out.println("Closing browser after suite...");
+	        driver.quit();
+	        driver = null;
+	        sharedBrowserSession = false;
+	    }
+	}
+	*/
 }

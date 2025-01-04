@@ -30,10 +30,10 @@ public class LoginPageLocators extends AbstractMethodClass {
 	@FindBy(xpath="//button[@type='submit']")
 	WebElement loginbtn;	
 	
-	@FindBy(css="span.css-b58x00")
+	@FindBy(css="span.css-o6vdqu")
 	WebElement head;
 	
-	@FindBy(css="span.css-zp900n")
+	@FindBy(css="span.css-101qbrm")
 	WebElement headsub;
 	
 	@FindBy(css="img.css-1fk4y32")
@@ -42,13 +42,13 @@ public class LoginPageLocators extends AbstractMethodClass {
 	@FindBy(css="img.css-10h6mrw")
 	WebElement logoimg;
 	
-	@FindBy(xpath="(//div[@class='MuiStack-root css-1mnjkd']/div)[1]")
+	@FindBy(xpath="(//div[@class='MuiStack-root css-1mnjkd']/span)[1]")
 	WebElement loggedinuser;
 	
-	@FindBy(css="p.css-10u41sz")
+	@FindBy(css="p.css-gae0n")
 	WebElement invalidemail;
 	
-	@FindBy(css="p.css-1afwgxb")
+	@FindBy(css="p.css-2o7nbv")
 	WebElement invalidcredentials;
 	
 	public HashMap<String,String> verifyLoginPageElements() {

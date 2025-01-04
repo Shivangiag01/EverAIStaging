@@ -3,14 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="everailabs.EverAIDashboard.ErrorLoginValidation">
+      <class name="everailabs.EverAIDashboard.UserManagementRoleTest">
         <methods>
+          <include name="tc_002_verifyAddNewRole" invocation-numbers="0 1 2"/>
           <include name="launchApp"/>
-          <include name="tc_002_verifyinvalidcred" invocation-numbers="0 1 2 3 4"/>
-          <include name="tc_001_verifyinvalidEmailLogin" invocation-numbers="2"/>
+          <include name="tc_001_verifyAddRoleFormElements"/>
+          <include name="closeBrowser"/>
           <include name="exit"/>
         </methods>
-      </class> <!-- everailabs.EverAIDashboard.ErrorLoginValidation -->
+      </class> <!-- everailabs.EverAIDashboard.UserManagementRoleTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
