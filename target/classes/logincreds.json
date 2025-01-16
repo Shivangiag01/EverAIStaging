@@ -55,34 +55,34 @@
 		"username":"Maneesh Singh"		
 	},
 	{
-			"useremail":"maneeshsinghh1@weareverise.com",
-			"password":"admin@123"	,
-			"username":"Maneesh Singh"		
+		"useremail":"maneeshsinghh1@weareverise.com",
+		"password":"admin@123"	,
+		"username":"Maneesh Singh"		
 	},
 	{
-			"useremail":"maneeshsingh1@weareverise.com",
-			"password":"admin@1234"	,
-			"username":"Maneesh Singh"		
+		"useremail":"maneeshsingh1@weareverise.com",
+		"password":"admin@1234"	,
+		"username":"Maneesh Singh"		
 	},
 	{
-			"useremail":"maneeshsingh11@weareverise.com",
-			"password":"admin@1234"	,
-			"username":"Maneesh Singh"		
+		"useremail":"maneeshsingh11@weareverise.com",
+		"password":"admin@1234"	,
+		"username":"Maneesh Singh"		
 	},
 	{
-			"useremail":"maneeshsingh1@gmail.com",
-			"password":"admin@123"	,
-			"username":"Maneesh Singh"		
+		"useremail":"maneeshsingh1@gmail.com",
+		"password":"admin@123"	,
+		"username":"Maneesh Singh"		
 	},
 	{
-			"useremail":"shivangi@weareverise.com",
-			"password":"admin@123"	,
-			"username":"Shivangi"		
+		"useremail":"shivangi@weareverise.com",
+		"password":"admin@123"	,
+		"username":"Shivangi"		
 	},
 	{
-			"useremail":"",
-			"password":"admin@123"	,
-			"username":"Maneesh Singh"		
+		"useremail":"",
+		"password":"admin@123"	,
+		"username":"Maneesh Singh"		
 	},
 	{
 		"useremail":"maneeshsingh1@weareverise.com",
@@ -90,8 +90,14 @@
 		"username":"Maneesh Singh"		
 	},
 	{
-			"useremail":"arishi@c3connect.com",
-			"password":"Test@123"	,
-			"username":"Anmol Rishi"		
+		"useremail":"arishi@c3connect.com",
+		"password":"Test@123"	,
+		"username":"Anmol Rishi"		
+	},
+	{
+		"useremail":"testtomorrow@yopmail.com",
+		"password":"Test@123"	,
+		"username":"ActivateAccount Expire"		
 	}
+		
 ]

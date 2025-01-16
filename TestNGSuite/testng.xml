@@ -7,6 +7,14 @@
 	<test thread-count="1" name="Test">
 		<classes>
 			<class name="everailabs.EverAIDashboard.LoginValidation">
+			<methods>
+			<include name="tc_003_login"></include>
+			</methods>
+			</class>
+			<class name="everailabs.EverAIDashboard.UM_UIValidations">
+			<methods>
+			<include name="tc_002_verifyTableElements"></include>
+			</methods>
 			</class>
 		</classes>
 	</test> <!--

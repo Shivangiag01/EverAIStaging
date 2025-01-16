@@ -101,7 +101,7 @@ public class LoginPageLocators extends AbstractMethodClass {
 	}
 		
 	
-	public String verifyInactiveAccountError(String useremail, String pass) {
+	public String verifyAccountError(String useremail, String pass) {
 		email.sendKeys(useremail);
 		password.sendKeys(pass);
 		if(loginbtn.isEnabled()) {

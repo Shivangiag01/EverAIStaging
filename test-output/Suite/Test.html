@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>13/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Jan 11 21:40:12 IST 2025</td>
+<td>Started on:</td><td>Thu Jan 16 17:58:58 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>67 seconds (67951 ms)</td>
+<tr><td>Total time:</td><td>16 seconds (16514 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,70 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='everailabs.EverAIDashboard.UM_UIValidations.tc_002_verifyTableElements()'><b>tc_002_verifyTableElements</b><br>Test class: everailabs.EverAIDashboard.UM_UIValidations</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\SAGARW~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54759}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54759/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: df04b8b91af0d928abe8ca1227a2049e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at everailabs.Abstraction.AbstractMethodClass.WebElementListVisibleWait(AbstractMethodClass.java:26)
+	at everailabs.Locators.UM_UsersLocators.verifyTableElements(UM_UsersLocators.java:219)
+	at everailabs.EverAIDashboard.UM_UIValidations.tc_002_verifyTableElements(UM_UIValidations.java:30)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace356519935", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace356519935'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div], [[ChromeDriver: chrome on windows (df04b8b91af0d928abe8ca1227a2049e)] -&gt; xpath: //div[contains(@class,&apos;css-1t374vw&apos;)]/div/div/div/div/div]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\SAGARW~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54759}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54759/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: df04b8b91af0d928abe8ca1227a2049e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at everailabs.Abstraction.AbstractMethodClass.WebElementListVisibleWait(AbstractMethodClass.java:26)
+	at everailabs.Locators.UM_UsersLocators.verifyTableElements(UM_UsersLocators.java:219)
+	at everailabs.EverAIDashboard.UM_UIValidations.tc_002_verifyTableElements(UM_UIValidations.java:30)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>10</td>
+<td>everailabs.EverAIDashboard.UM_UIValidations@18317edc</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,70 +140,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_003_missingfield()'><b>tc_003_missingfield</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=, useremail=maneeshsingh1@weareverise.com, username=Maneesh Singh}</td>
-<td></td>
-<td>0</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_001_verifyinvalidEmailLogin()'><b>tc_001_verifyinvalidEmailLogin</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@123, useremail=maneeshsingh1weareverise.com, username=Maneesh Singh}</td>
-<td></td>
-<td>0</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_002_verifyinvalidcred()'><b>tc_002_verifyinvalidcred</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@1234, useremail=maneeshsingh1@weareverise.com, username=Maneesh Singh}</td>
-<td></td>
-<td>2</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_001_verifyinvalidEmailLogin()'><b>tc_001_verifyinvalidEmailLogin</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@123, useremail=maneesh  singh1@weareverise.com, username=Maneesh Singh}</td>
-<td></td>
-<td>0</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_002_verifyinvalidcred()'><b>tc_002_verifyinvalidcred</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@123, useremail=maneeshsingh1@gmail.com, username=Maneesh Singh}</td>
+<td title='everailabs.EverAIDashboard.LoginValidation.tc_003_login()'><b>tc_003_login</b><br>Test class: everailabs.EverAIDashboard.LoginValidation<br>Parameters: {password=Password@123, useremail=Shivangi.Agarwal@weareeverise.com, username=Shivangi Agarwal}</td>
 <td></td>
 <td>1</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_001_verifyinvalidEmailLogin()'><b>tc_001_verifyinvalidEmailLogin</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@123, useremail=@maneeshsingh1@weareverise.com, username=Maneesh Singh}</td>
-<td></td>
-<td>0</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_002_verifyinvalidcred()'><b>tc_002_verifyinvalidcred</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@123, useremail=maneeshsinghh1@weareverise.com, username=Maneesh Singh}</td>
-<td></td>
-<td>1</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_001_verifyinvalidEmailLogin()'><b>tc_001_verifyinvalidEmailLogin</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@123, useremail=maneeshsingh1#weareverise.com, username=Maneesh Singh}</td>
-<td></td>
-<td>0</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_003_missingfield()'><b>tc_003_missingfield</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@123, useremail=, username=Maneesh Singh}</td>
-<td></td>
-<td>0</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_001_verifyinvalidEmailLogin()'><b>tc_001_verifyinvalidEmailLogin</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@123, useremail=maneeshsingh1@weareverise, username=Maneesh Singh}</td>
-<td></td>
-<td>0</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_001_verifyinvalidEmailLogin()'><b>tc_001_verifyinvalidEmailLogin</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@123, useremail=maneeshsingh1@@weareverise.com, username=Maneesh Singh}</td>
-<td></td>
-<td>0</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_002_verifyinvalidcred()'><b>tc_002_verifyinvalidcred</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@1234, useremail=maneeshsingh11@weareverise.com, username=Maneesh Singh}</td>
-<td></td>
-<td>3</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
-<tr>
-<td title='everailabs.EverAIDashboard.ErrorLoginValidation.tc_002_verifyinvalidcred()'><b>tc_002_verifyinvalidcred</b><br>Test class: everailabs.EverAIDashboard.ErrorLoginValidation<br>Parameters: {password=admin@123, useremail=shivangi@weareverise.com, username=Shivangi}</td>
-<td></td>
-<td>1</td>
-<td>everailabs.EverAIDashboard.ErrorLoginValidation@13d73f29</td></tr>
+<td>everailabs.EverAIDashboard.LoginValidation@6bb4dd34</td></tr>
 </table><p>
 </body>
 </html>

@@ -34,9 +34,17 @@ public class ErrorLoginValidation extends BasicInitialization{
 	
 	@Test(dataProvider="getData4")
 	public void tc_004_verifyInactiveAccount(HashMap<String,String> input) {		
-		String errormsg= lp.verifyInactiveAccountError(input.get("useremail"), input.get("password"));	
+		String errormsg= lp.verifyAccountError(input.get("useremail"), input.get("password"));	
 		Assert.assertEquals(errormsg, "User account is not yet activated");
 	}
+	
+	
+	@Test(dataProvider="getData5")
+	public void tc_004_verifyDeactivatedAccount(HashMap<String,String> input) {		
+		String errormsg= lp.verifyAccountError(input.get("useremail"), input.get("password"));	
+		Assert.assertEquals(errormsg, "User is deactivated");
+	}
+	
 	
 	
 	@DataProvider
@@ -69,6 +77,15 @@ public class ErrorLoginValidation extends BasicInitialization{
 		List<HashMap<String,String>> data=getJsonData(System.getProperty("user.dir") + "\\src\\main\\resources\\logincreds.json");
 		return new Object[][] {
 			{data.get(18)}
+		};
+	}
+	
+	
+	@DataProvider
+	public Object[][] getData5() throws IOException {
+		List<HashMap<String,String>> data=getJsonData(System.getProperty("user.dir") + "\\src\\main\\resources\\logincreds.json");
+		return new Object[][] {
+			{data.get(19)}
 		};
 	}
 }
