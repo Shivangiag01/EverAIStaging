@@ -1,8 +1,8 @@
 [
 	{
-		"useremail":"maneeshsingh1@weareverise.com",
-		"password":"admin@123"	,
-		"username":"Maneesh Singh"	
+		"useremail":"Shivangi.Agarwal@weareeverise.com",
+		"password":"Password@123"	,
+		"username":"Shivangi Agarwal"	
 	},		
 	{
 		"useremail":"MANEESHsingh@weareverise.com",
@@ -88,5 +88,10 @@
 		"useremail":"maneeshsingh1@weareverise.com",
 		"password":""	,
 		"username":"Maneesh Singh"		
+	},
+	{
+			"useremail":"arishi@c3connect.com",
+			"password":"Test@123"	,
+			"username":"Anmol Rishi"		
 	}
 ]

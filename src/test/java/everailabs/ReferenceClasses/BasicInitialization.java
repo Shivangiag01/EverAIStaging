@@ -30,16 +30,16 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import everailabs.Locators.LoginPageLocators;
-import everailabs.Locators.UM_RolesPageLocators;
-import everailabs.Locators.UM_UsersPageLocators;
+import everailabs.Locators.UM_RolesLocators;
+import everailabs.Locators.UM_UsersLocators;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasicInitialization {
 	public static WebDriver driver;
 	private static boolean sharedBrowserSession = false;
 	protected LoginPageLocators lp;
-	protected UM_UsersPageLocators um;
-	protected UM_RolesPageLocators umr;
+	protected UM_UsersLocators um;
+	protected UM_RolesLocators umr;
 
 	public WebDriver browserSelection() throws IOException {
 		Properties prop = new Properties();
@@ -68,7 +68,7 @@ public class BasicInitialization {
 			driver.get("https://calm-sand-0ddc4e70f-preview.eastus2.4.azurestaticapps.net");
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			lp = new LoginPageLocators(driver);
-			um= new UM_UsersPageLocators(driver);
+			um= new UM_UsersLocators(driver);
 			
 		}
 	}
@@ -111,7 +111,7 @@ public class BasicInitialization {
 		sharedBrowserSession = false;
 	}
 
-	/*
+	
 	@AfterSuite(alwaysRun = true)
 	public void closeBrowser() {
 	    if (driver != null) {
@@ -121,5 +121,5 @@ public class BasicInitialization {
 	        sharedBrowserSession = false;
 	    }
 	}
-	*/
+	
 }

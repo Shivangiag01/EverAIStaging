@@ -1,11 +1,15 @@
 package everailabs.Locators;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -14,10 +18,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import everailabs.Abstraction.AbstractMethodClass;
 
-public class UM_UsersPageLocators extends AbstractMethodClass {
+public class UM_UsersLocators extends AbstractMethodClass {
 	WebDriver driver;
 
-	public UM_UsersPageLocators(WebDriver driver) {
+	public UM_UsersLocators(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -58,20 +62,20 @@ public class UM_UsersPageLocators extends AbstractMethodClass {
 	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/li")
 	 List<WebElement> countryCodeList ;
 	
-	@FindBy(xpath = "(//div[contains(@class,'css-mp9f0v')])[2]")
+	@FindBy(xpath = "(//div[contains(@class,'css-17qa0m8')])[2]")
 	WebElement division;
 	
 	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/li")
 	 List<WebElement> divisionList ;
 	
-	@FindBy(xpath = "(//div[contains(@class,'css-mp9f0v')])[3]")
+	@FindBy(xpath = "(//div[contains(@class,'css-17qa0m8')])[3]")
 	WebElement department;
 	
 	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/li")
 	 List<WebElement> deptList ;
 	
 		
-	@FindBy(css="input.css-1iohxmk")
+	@FindBy(css="button.css-15guoxn")
 	WebElement calendar;
 	
 	@FindBy(xpath = "//div[contains(@class,'css-naa195')]/div//button[contains(@class,'css-1fowdqw')]")
@@ -100,6 +104,14 @@ public class UM_UsersPageLocators extends AbstractMethodClass {
 
 	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/div/h6")
 	List<WebElement> rolelist;
+	
+	@FindBy(xpath="//div[contains(@class,'css-1jf2f7b')]/div/div")
+	List<WebElement> selectedrolelist;
+	
+	@FindBy(css="div.MuiChip-root svg.MuiSvgIcon-root[data-testid='CancelIcon']")
+	WebElement crossforexistingroles;
+	
+	
 
 	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/div/h6")
 	List<WebElement> rolelist1;
@@ -204,53 +216,46 @@ public class UM_UsersPageLocators extends AbstractMethodClass {
 	}
 
 	
-	public String addUserWithOptionalFields(String first_name, String last_name, String user_email,String contact,String date,String div,String classid,String did, String deptid) {
+	public String addUserWithOptionalFields(String first_name, String last_name, String user_email,String code,String contact,String date,String div,String classid,String did, String deptid) {
 		adduser.click();
 		WebElementVisibleWait(form);
 		fname.sendKeys(first_name);
 		lname.sendKeys(last_name);
-		email.sendKeys(user_email);
-		/*
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", stdcode);			
+		email.sendKeys(user_email);	
+		stdcode.click();
+		WebElementListVisibleWait(countryCodeList);
 	    if (!countryCodeList.isEmpty()) {
-	           Random random = new Random();
-	           int randomIndex = random.nextInt(countryCodeList.size());
-	           WebElement randomElement = countryCodeList.get(randomIndex);
-	           randomElement.click();
-	         
+	          for(WebElement Ccode:countryCodeList) {
+	        	  String Ccodetext=Ccode.getText();
+	           	  String[] c1= Ccodetext.split("[()]");
+	        	  String countryCode = c1[1];
+	        	  System.out.println(countryCode);
+	        	  if(countryCode.equalsIgnoreCase(code)) {
+	        		  Ccode.click();
+	        		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+	        		  phone.sendKeys(contact);
+	           		  break;
+	        	  }
+	          }	                 
 	    }else {
 	        System.out.println("No country codes found in the dropdown.");
-	    }	
-	    */
-	    if(date==null) {
-	    calendar.click();
-	    WebElementListVisibleWait(currentmonthdateList);
-	    if (!currentmonthdateList.isEmpty()) {
-	           Random random = new Random();
-	           int randomIndex = random.nextInt(currentmonthdateList.size());
-	           WebElement randomElement = currentmonthdateList.get(randomIndex);
-	           randomElement.click();
-	    }else {
-	        System.out.println("Date not selected");
-	    }	
-	    }else {calendar.sendKeys(date);}
-	    
+	    }	    
+	    formheader.click();
 	    System.out.println(first_name + "  "+ div);
+	    WebElementVisibleWait(division);
 	    if(div == null) {
 	    division.click();
+	    WebElementListVisibleWait(divisionList);
 	    if (!divisionList.isEmpty()) {
-	           Random random = new Random();
-	           int randomIndex = random.nextInt(divisionList.size());
-	           WebElement randomElement = divisionList.get(randomIndex);
+	    	 WebElement randomElement = divisionList.get(new Random().nextInt(divisionList.size()));
 	           randomElement.click();
 	    }else {
 	    	System.out.println("No Division found");
 	    }
 	    department.click();
+	    WebElementListVisibleWait(deptList);
 	    if (!deptList.isEmpty()) {
-	           Random random = new Random();
-	           int randomIndex = random.nextInt(deptList.size());
-	           WebElement randomElement = deptList.get(randomIndex);
+               WebElement randomElement = deptList.get(new Random().nextInt(deptList.size()));
 	           randomElement.click();
 	     }else {
 	        System.out.println("No Department found");
@@ -259,7 +264,19 @@ public class UM_UsersPageLocators extends AbstractMethodClass {
 	    else {
 	    	division.sendKeys(div);
 	    	System.out.println("div is null so skipping");
-	    }
+	    }	    
+	    if(date==null) {
+	    calendar.click();
+	    WebElementListVisibleWait(currentmonthdateList);
+	    if (!currentmonthdateList.isEmpty()) {
+	           WebElement randomElement = currentmonthdateList.get(new Random().nextInt(currentmonthdateList.size()));
+	           randomElement.click();
+	    }else {
+	        System.out.println("Date not selected");
+	    }	
+	    }else {calendar.sendKeys(date);}
+	    
+	   
 	    classID.sendKeys(classid);
 	    internalID.sendKeys(did);
 	    externalID.sendKeys(deptid);
@@ -272,10 +289,8 @@ public class UM_UsersPageLocators extends AbstractMethodClass {
 		act.moveToElement(firstelement).perform();
 		WebElementListVisibleWait(rolelist);
 		if(!rolelist.isEmpty()) {
-			Random random = new Random();
-	           int randomIndex = random.nextInt(rolelist.size());
-	           WebElement randomElement = rolelist.get(randomIndex);
-	           randomElement.click();
+			 WebElement randomRole = rolelist.get(new Random().nextInt(rolelist.size()));
+	           randomRole.click();	          
 		}
 		if (button.isEnabled()) {
 			button.click();
@@ -286,7 +301,7 @@ public class UM_UsersPageLocators extends AbstractMethodClass {
 	}
 
 	
-	public String editUser(String first_name, String last_name, String user_email,String contact,String date,String div,String classid,String did, String deptid) {
+	public String editUser(String first_name, String last_name, String user_email, String code,String contact,String date,String div,String classid,String did, String deptid) {
 		WebElementVisibleWait(userdata);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		JavascriptExecutor js= (JavascriptExecutor)driver;
@@ -300,26 +315,29 @@ public class UM_UsersPageLocators extends AbstractMethodClass {
 		js.executeScript("arguments[0].click();", edituserbutton);		
 		System.out.println("edit button menu clicked");
 		WebElementVisibleWait(form);
-		fname.clear();
-		lname.clear();
-		classID.clear();
-	    internalID.clear();
-	    externalID.clear();
+		
+		
+		Actions actions = new Actions(driver);
+		actions.doubleClick(fname).sendKeys(Keys.BACK_SPACE).perform();	
+		System.out.println("Fname is cleared");
+		actions.doubleClick(lname).sendKeys(Keys.BACK_SPACE).perform();
+		System.out.println("Lname is cleared");
+		actions.doubleClick(classID).sendKeys(Keys.BACK_SPACE).perform();		
+		internalID.sendKeys(Keys.CONTROL + "a");
+		internalID.sendKeys(Keys.DELETE);		
+		externalID.sendKeys(Keys.CONTROL + "a");
+		externalID.sendKeys(Keys.DELETE);
+		
+	    
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+	    
+	    
 		fname.sendKeys(first_name);
 		lname.sendKeys(last_name);
 		if(email.isEnabled()) {
 		email.sendKeys(user_email);
 		}else {System.out.println("email field can't be edited");}		
-		js.executeScript("arguments[0].click();", stdcode);			
-	    if (!countryCodeList.isEmpty()) {
-	           Random random = new Random();
-	           int randomIndex = random.nextInt(countryCodeList.size());
-	           WebElement randomElement = countryCodeList.get(randomIndex);
-	           randomElement.click();
-	           phone.sendKeys(contact);
-	    }else {
-	        System.out.println("No country codes found in the dropdown.");
-	    }	    
+	   
 	    if(date==null) {
 	    calendar.click();
 	    WebElementListVisibleWait(currentmonthdateList);
@@ -363,16 +381,23 @@ public class UM_UsersPageLocators extends AbstractMethodClass {
 	    externalID.sendKeys(deptid);
 	    reporting.click();
 		WebElementVisibleWait(selectuser);
-		selectuser.click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		selectuser.click();		
+		int srolescount= selectedrolelist.size();		
+		WebElementClickable(crossforexistingroles);
+		if(crossforexistingroles.isDisplayed()) {
+			for(int i=1;i<=srolescount;i++) {
+			crossforexistingroles.click();
+			}
+		}
 		assignrole.click();
-		Actions act = new Actions(driver);
-		act.moveToElement(firstelement).perform();
+		actions.moveToElement(firstelement).perform();
 		WebElementListVisibleWait(rolelist);
 		for (WebElement role : rolelist) {
 			String rolename = role.getText();
-			if (rolename.equalsIgnoreCase("admin")) {
+			Set<String> validRoles = new HashSet<>(Arrays.asList("agent", "manager", "supervisor"));
+			if (validRoles.contains(rolename.toLowerCase())) {
 				role.click();
+				break;
 			}
 		}
 		if (button.isEnabled()) {

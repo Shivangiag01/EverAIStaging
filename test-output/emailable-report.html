@@ -9,23 +9,34 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Login and Add User</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">39,008</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Login and Add New Role</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">11,381</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login and Add User &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">everailabs.EverAIDashboard.UserManagementTest</td><td><a href="#m0">tc_004_verifyAddUserWithOptionalFields</a></td><td rowspan="1">1735636621927</td><td rowspan="1">31062</td></tr><tr><th colspan="4">Login and Add User &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">everailabs.EverAIDashboard.LoginValidation</td><td><a href="#m1">tc_003_login</a></td><td rowspan="1">1735636620055</td><td rowspan="1">1853</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login and Add New Role &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">everailabs.EverAIDashboard.UserManagementRoleTest</td><td><a href="#m0">tc_002_verifyAddNewRole</a></td><td rowspan="1">1736927560391</td><td rowspan="1">1606</td></tr><tr><th colspan="4">Login and Add New Role &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">everailabs.EverAIDashboard.LoginValidation</td><td><a href="#m1">tc_003_login</a></td><td rowspan="1">1736927557528</td><td rowspan="1">2146</td></tr><tr class="passedodd"><td rowspan="1">everailabs.EverAIDashboard.UserManagementRoleTest</td><td><a href="#m2">tc_001_verifyAddRoleFormElements</a></td><td rowspan="1">1736927559691</td><td rowspan="1">667</td></tr></tbody>
 </table>
-<h2>Login and Add User</h2><h3 id="m0">everailabs.EverAIDashboard.UserManagementTest#tc_004_verifyAddUserWithOptionalFields</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{date=null, division=null, internalID=INT-123, firstname=Nalini, classID=CLS_001, externalID=EXT#567, email=nalini.shah@example.com, lastname=Shah, contactno=}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [] (tried for 10 second(s) with 500 milliseconds interval)
+<h2>Login and Add New Role</h2><h3 id="m0">everailabs.EverAIDashboard.UserManagementRoleTest#tc_002_verifyAddNewRole</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{rolename=Testing}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=131.0.6778.265)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\Saket\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61341}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61341/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7568aad1eefe26074a7e27efd32622e2
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at everailabs.Abstraction.AbstractMethodClass.WebElementListVisibleWait(AbstractMethodClass.java:26)
-	at everailabs.Locators.UM_UsersPageLocators.addUserWithOptionalFields(UM_UsersPageLocators.java:224)
-	at everailabs.EverAIDashboard.UserManagementTest.tc_004_verifyAddUserWithOptionalFields(UserManagementTest.java:51)
+Command: [af5c176d84cffe314df37da54903c20a, clickElement {id=f.6000D9744931DABA612BF0464A4520E4.d.6D26EE50FBFC2C5DB6EED3E70471BDC0.e.68}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\SAGARW~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62563}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62563/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (af5c176d84cffe314df37da54903c20a)] -&gt; xpath: //ul[contains(@class,&apos;css-ubifyk&apos;)]/li]
+Session ID: af5c176d84cffe314df37da54903c20a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at everailabs.Locators.UM_RolesLocators.addNewRole(UM_RolesLocators.java:93)
+	at everailabs.EverAIDashboard.UserManagementRoleTest.tc_002_verifyAddNewRole(UserManagementRoleTest.java:28)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">everailabs.EverAIDashboard.LoginValidation#tc_003_login</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=admin@123, useremail=maneeshsingh1@weareverise.com, username=Maneesh Singh}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">everailabs.EverAIDashboard.LoginValidation#tc_003_login</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Password@123, useremail=Shivangi.Agarwal@weareeverise.com, username=Shivangi Agarwal}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">everailabs.EverAIDashboard.UserManagementRoleTest#tc_001_verifyAddRoleFormElements</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -1,66 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-31T14:46:54 IST" name="Suite" finished-at="2024-12-31T14:47:33 IST" duration-ms="39008">
+  <suite started-at="2025-01-15T13:22:30 IST" name="Suite" finished-at="2025-01-15T13:22:42 IST" duration-ms="11381">
     <groups>
     </groups>
-    <test started-at="2024-12-31T14:46:54 IST" name="Login and Add User" finished-at="2024-12-31T14:47:33 IST" duration-ms="39008">
+    <test started-at="2025-01-15T13:22:30 IST" name="Login and Add New Role" finished-at="2025-01-15T13:22:42 IST" duration-ms="11381">
       <class name="everailabs.EverAIDashboard.LoginValidation">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@13d73f29]" started-at="2024-12-31T14:46:54 IST" name="launchApp" finished-at="2024-12-31T14:47:00 IST" duration-ms="5641" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@45efd90f]" started-at="2025-01-15T13:22:30 IST" name="launchApp" finished-at="2025-01-15T13:22:37 IST" duration-ms="6588" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="tc_003_login(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@13d73f29]" started-at="2024-12-31T14:47:00 IST" name="tc_003_login" data-provider="getData1" finished-at="2024-12-31T14:47:01 IST" duration-ms="1853" status="PASS">
+        <test-method signature="tc_003_login(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@45efd90f]" started-at="2025-01-15T13:22:37 IST" name="tc_003_login" data-provider="getData1" finished-at="2025-01-15T13:22:39 IST" duration-ms="2146" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{password=admin@123, useremail=maneeshsingh1@weareverise.com, username=Maneesh Singh}]]>
+                <![CDATA[{password=Password@123, useremail=Shivangi.Agarwal@weareeverise.com, username=Shivangi Agarwal}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_003_login -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@13d73f29]" started-at="2024-12-31T14:47:01 IST" name="exit" finished-at="2024-12-31T14:47:01 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@45efd90f]" started-at="2025-01-15T13:22:39 IST" name="exit" finished-at="2025-01-15T13:22:39 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@45efd90f]" started-at="2025-01-15T13:22:42 IST" name="closeBrowser" finished-at="2025-01-15T13:22:43 IST" duration-ms="283" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
       </class> <!-- everailabs.EverAIDashboard.LoginValidation -->
-      <class name="everailabs.EverAIDashboard.UserManagementTest">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementTest@a8ef162]" started-at="2024-12-31T14:47:01 IST" name="launchApp" finished-at="2024-12-31T14:47:01 IST" duration-ms="1" status="PASS">
+      <class name="everailabs.EverAIDashboard.UserManagementRoleTest">
+        <test-method signature="tc_001_verifyAddRoleFormElements()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@238d68ff]" started-at="2025-01-15T13:22:39 IST" name="tc_001_verifyAddRoleFormElements" finished-at="2025-01-15T13:22:40 IST" duration-ms="667" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc_001_verifyAddRoleFormElements -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@238d68ff]" started-at="2025-01-15T13:22:39 IST" name="launchApp" finished-at="2025-01-15T13:22:39 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="tc_004_verifyAddUserWithOptionalFields(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.UserManagementTest@a8ef162]" started-at="2024-12-31T14:47:01 IST" name="tc_004_verifyAddUserWithOptionalFields" data-provider="getUserDataOptional" finished-at="2024-12-31T14:47:32 IST" duration-ms="31062" status="FAIL">
+        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@238d68ff]" started-at="2025-01-15T13:22:40 IST" name="exit" finished-at="2025-01-15T13:22:40 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exit -->
+        <test-method signature="tc_002_verifyAddNewRole(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@238d68ff]" started-at="2025-01-15T13:22:40 IST" name="tc_002_verifyAddNewRole" data-provider="getRoleData" finished-at="2025-01-15T13:22:41 IST" duration-ms="1606" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{date=null, division=null, internalID=INT-123, firstname=Nalini, classID=CLS_001, externalID=EXT#567, email=nalini.shah@example.com, lastname=Shah, contactno=}]]>
+                <![CDATA[{rolename=Testing}]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of all [] (tried for 10 second(s) with 500 milliseconds interval)
+              <![CDATA[stale element reference: stale element not found in the current frame
+  (Session info: chrome=131.0.6778.265)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\Saket\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61341}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61341/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7568aad1eefe26074a7e27efd32622e2]]>
+Command: [af5c176d84cffe314df37da54903c20a, clickElement {id=f.6000D9744931DABA612BF0464A4520E4.d.6D26EE50FBFC2C5DB6EED3E70471BDC0.e.68}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\SAGARW~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62563}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62563/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (af5c176d84cffe314df37da54903c20a)] -> xpath: //ul[contains(@class,'css-ubifyk')]/li]
+Session ID: af5c176d84cffe314df37da54903c20a]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [] (tried for 10 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=131.0.6778.265)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\Saket\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61341}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61341/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7568aad1eefe26074a7e27efd32622e2
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at everailabs.Abstraction.AbstractMethodClass.WebElementListVisibleWait(AbstractMethodClass.java:26)
-at everailabs.Locators.UM_UsersPageLocators.addUserWithOptionalFields(UM_UsersPageLocators.java:224)
-at everailabs.EverAIDashboard.UserManagementTest.tc_004_verifyAddUserWithOptionalFields(UserManagementTest.java:51)
+Command: [af5c176d84cffe314df37da54903c20a, clickElement {id=f.6000D9744931DABA612BF0464A4520E4.d.6D26EE50FBFC2C5DB6EED3E70471BDC0.e.68}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\SAGARW~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62563}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62563/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (af5c176d84cffe314df37da54903c20a)] -> xpath: //ul[contains(@class,'css-ubifyk')]/li]
+Session ID: af5c176d84cffe314df37da54903c20a
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at everailabs.Locators.UM_RolesLocators.addNewRole(UM_RolesLocators.java:93)
+at everailabs.EverAIDashboard.UserManagementRoleTest.tc_002_verifyAddNewRole(UserManagementRoleTest.java:28)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -89,15 +118,19 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc_004_verifyAddUserWithOptionalFields -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementTest@a8ef162]" started-at="2024-12-31T14:47:33 IST" name="exit" finished-at="2024-12-31T14:47:33 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- tc_002_verifyAddNewRole -->
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@238d68ff]" started-at="2025-01-15T13:22:40 IST" name="launchApp" finished-at="2025-01-15T13:22:40 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@238d68ff]" started-at="2025-01-15T13:22:42 IST" name="exit" finished-at="2025-01-15T13:22:42 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->
-      </class> <!-- everailabs.EverAIDashboard.UserManagementTest -->
-    </test> <!-- Login and Add User -->
+      </class> <!-- everailabs.EverAIDashboard.UserManagementRoleTest -->
+    </test> <!-- Login and Add New Role -->
   </suite> <!-- Suite -->
 </testng-results>

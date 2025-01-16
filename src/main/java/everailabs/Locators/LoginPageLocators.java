@@ -83,7 +83,7 @@ public class LoginPageLocators extends AbstractMethodClass {
 		return invalidemailmsg;
 	}
 	
-	public String verifyCredentialsError(String useremail, String pass) {
+	public String verifyInvalidCredentialsError(String useremail, String pass) {
 		email.sendKeys(useremail);
 		password.sendKeys(pass);
 		if(loginbtn.isEnabled()) {
@@ -100,6 +100,20 @@ public class LoginPageLocators extends AbstractMethodClass {
 		return loginbtn.isEnabled();			 
 	}
 		
+	
+	public String verifyInactiveAccountError(String useremail, String pass) {
+		email.sendKeys(useremail);
+		password.sendKeys(pass);
+		if(loginbtn.isEnabled()) {
+			  JavascriptExecutor js= (JavascriptExecutor)driver;
+			  js.executeScript("arguments[0].click();", loginbtn);
+			  WebElementVisibleWait(invalidcredentials);
+	}
+		return invalidcredentials.getText();
+		
+		
+	
+	}
 	
 	
 }

@@ -1,0 +1,51 @@
+[
+  {
+    "firstname": "Robert",
+    "lastname": "Brown",
+    "email": "robert.brown@example.com",
+	"reprtingTo":null,
+	"assignroles":null
+  },
+  {
+    "firstname": "Emily",
+    "lastname": "Clark",
+    "email": "emily.clark@example.net",
+	"reprtingTo":null,
+	"assignroles":null
+  },
+  {
+    "firstname": "",
+    "lastname": "Johnson",
+    "email": "olivia.johnson@example.com",
+	"reprtingTo":null,
+	"assignroles":null
+  },
+  {
+    "firstname": "William",
+    "lastname": "",
+    "email": "william.moore@example.com",
+	"reprtingTo":null,
+	"assignroles":null
+  },
+  {
+    "firstname": "Sophia",
+    "lastname": "Davis",
+    "email": "",
+	"reprtingTo":null,
+	"assignroles":null
+  },
+  {
+    "firstname": "James",
+    "lastname": "Wilson",
+    "email": "james.wilson@example.com",
+	"reprtingTo":"null",
+	"assignroles":null
+  },
+  {
+    "firstname": "Isabella",
+    "lastname": "Martinez",
+    "email": "isabella.martinez@example.org",
+	"reprtingTo":null,
+	"assignroles":"null"
+  }
+]

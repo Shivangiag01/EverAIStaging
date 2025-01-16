@@ -15,8 +15,7 @@
 				<methods>
 					<include
 						name="tc_004_verifyAddUserWithOptionalFields"></include>
-						
-				</methods>
+					</methods>
 			</class>
 		</classes>
 	</test> <!--

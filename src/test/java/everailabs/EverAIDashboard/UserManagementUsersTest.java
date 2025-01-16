@@ -8,16 +8,16 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import everailabs.Locators.UM_RolesPageLocators;
-import everailabs.Locators.UM_UsersPageLocators;
+import everailabs.Locators.UM_RolesLocators;
+import everailabs.Locators.UM_UsersLocators;
 import everailabs.ReferenceClasses.BasicInitialization;
 
-public class UserManagementTest extends BasicInitialization {
+public class UserManagementUsersTest extends BasicInitialization {
 
 	@Test
 	public void tc_001_verifyAddUserFormHeader() {
 		if (um == null) {
-            um = new UM_UsersPageLocators(driver);
+            um = new UM_UsersLocators(driver);
      }
 		HashMap<String,String> map=	um.addUserForm();
 		Assert.assertEquals(map.get("header"), "Add User");
@@ -28,7 +28,7 @@ public class UserManagementTest extends BasicInitialization {
 	@Test(dataProvider="getUserData")
 	public void tc_002_verifyAddUserWithMandatoryFields(HashMap<String, String> input) {
 		if (um == null) {
-            um = new UM_UsersPageLocators(driver);
+            um = new UM_UsersLocators(driver);
      }
 		String finalmsg= um.addUserWithMandatoryFields(input.get("firstname"),input.get("lastname"),input.get("email"),input.get("reprtingTo"),input.get("assignroles"));		
 		Assert.assertEquals(finalmsg, "New User Added Successfully","The final message does not match the expected message.");			
@@ -37,7 +37,7 @@ public class UserManagementTest extends BasicInitialization {
 	@Test(dataProvider="getUserDataMissingFields")
 	public void tc_003_ErrorValidationWithMissingMandatoryFields(HashMap<String, String> input) {
 		if (um == null) {
-            um = new UM_UsersPageLocators(driver);
+            um = new UM_UsersLocators(driver);
      }
 		Boolean buttonstate= um.addUserWithMissingMandatoryFields(input.get("firstname"),input.get("lastname"),input.get("email"),input.get("reprtingTo"),input.get("assignroles"));		
 		Assert.assertEquals(buttonstate,false);			
@@ -46,18 +46,18 @@ public class UserManagementTest extends BasicInitialization {
 	@Test(dataProvider="getUserDataOptional")
 	public void tc_004_verifyAddUserWithOptionalFields(HashMap<String, String> input) {
 		if (um == null) {
-            um = new UM_UsersPageLocators(driver);
+            um = new UM_UsersLocators(driver);
      }
-		String finalmsg= um.addUserWithOptionalFields(input.get("firstname"),input.get("lastname"),input.get("email"),input.get("contactno"),input.get("date"),input.get("division"),input.get("classID"),input.get("internalID"),input.get("externalID"));		
+		String finalmsg= um.addUserWithOptionalFields(input.get("firstname"),input.get("lastname"),input.get("email"),input.get("countrycode"),input.get("contactno"),input.get("date"),input.get("division"),input.get("classID"),input.get("internalID"),input.get("externalID"));		
 		Assert.assertEquals(finalmsg, "New User Added Successfully","The final message does not match the expected message.");	
 	}
 	
 	@Test(dataProvider="editUserData")
 	public void tc_005_edituserdetails(HashMap<String, String> input) {
 		if (um == null) {
-            um = new UM_UsersPageLocators(driver);
+            um = new UM_UsersLocators(driver);
      }
-		String finalmsg= um.editUser(input.get("firstname"),input.get("lastname"),input.get("email"),input.get("contactno"),input.get("date"),input.get("division"),input.get("classID"),input.get("internalID"),input.get("externalID"));		
+		String finalmsg= um.editUser(input.get("firstname"),input.get("lastname"),input.get("email"),input.get("countrycode"),input.get("contactno"),input.get("date"),input.get("division"),input.get("classID"),input.get("internalID"),input.get("externalID"));		
 		Assert.assertEquals(finalmsg, "User Updated Successfully","The final message does not match the expected message.");			
 	}
 		

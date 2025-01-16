@@ -9,7 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import everailabs.Locators.LoginPageLocators;
-import everailabs.Locators.UM_UsersPageLocators;
+import everailabs.Locators.UM_UsersLocators;
 import everailabs.ReferenceClasses.BasicInitialization;
 
 public class LoginValidation extends BasicInitialization{
@@ -37,7 +37,7 @@ public class LoginValidation extends BasicInitialization{
 		String loggeinuser= lp.verifyLogin(input.get("useremail"), input.get("password"));
 		Assert.assertEquals(loggeinuser, input.get("username"));
 		enableSharedBrowserSession();
-		um = new UM_UsersPageLocators(driver);
+		//um = new UM_UsersPageLocators(driver);
 	}
 	
 	
