@@ -11,10 +11,11 @@
 					<include name="tc_003_login" />
 				</methods>
 			</class>
-			<class name="everailabs.EverAIDashboard.UserManagementTest">
+			<class name="everailabs.EverAIDashboard.UserManagementUsersTest">
 				<methods>
 					<include
-						name="tc_004_verifyAddUserWithOptionalFields"></include>
+						name="tc_001_verifyAddUserFormHeader"></include>
+						<include name="tc_003_ErrorValidationWithMissingMandatoryFields"></include>
 					</methods>
 			</class>
 		</classes>

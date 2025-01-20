@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AbstractMethodClass {
@@ -25,6 +27,15 @@ public class AbstractMethodClass {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfAllElements(element));
 	}
+	
+	public void WebElementListVisibleLongWait(By locator) {
+		Wait<WebDriver> fluentWait = new FluentWait<>(driver)
+			    .withTimeout(Duration.ofSeconds(25))
+			    .pollingEvery(Duration.ofMillis(500));
+	fluentWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+	}
+	
 	
 	public void WebElementClickable(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -45,5 +56,13 @@ public class AbstractMethodClass {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
 	}
+
+	
+	// Utility method to wait for rows to load
+		protected void waitForRowsToLoad(By locator) {
+		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		    wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+		}
+
 	
 }

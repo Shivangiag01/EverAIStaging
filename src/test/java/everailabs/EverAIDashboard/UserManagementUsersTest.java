@@ -13,9 +13,41 @@ import everailabs.Locators.UM_UsersLocators;
 import everailabs.ReferenceClasses.BasicInitialization;
 
 public class UserManagementUsersTest extends BasicInitialization {
-
+	
 	@Test
-	public void tc_001_verifyAddUserFormHeader() {
+	public void tc_001_verifyHeaderandNavigationMenuUIElements() {
+		UM_UsersLocators ul = new UM_UsersLocators(driver);
+		HashMap<String, String> value = ul.verifyHeaderandMenuUIElements();
+		Assert.assertEquals(value.get("Name"), "Shivangi Agarwal");
+		Assert.assertEquals(value.get("Role"), "Manager");
+		Assert.assertEquals(value.get("item1"), "Home");
+		Assert.assertEquals(value.get("item2"), "User Management");
+		Assert.assertEquals(value.get("item3"), "Reports");
+		Assert.assertEquals(value.get("item4"), "Settings");
+		Assert.assertEquals(value.get("item5"), "Notifications");
+		Assert.assertEquals(value.get("item6"), "Help & Support");
+	}
+	
+	@Test
+	public void tc_002_verifyTableElements_ColumnName() {
+		UM_UsersLocators ul = new UM_UsersLocators(driver);
+		 ul.verifyTableElements_ColumnName();
+		 
+	}
+	
+	@Test(dataProvider="getSerachString")
+	public void tc_003_verifySearchWithNameOrEmail(HashMap<String, String> input) throws InterruptedException {
+		UM_UsersLocators ul = new UM_UsersLocators(driver);
+		List<String> rows= ul.verifySearchWithNameOrEmail(input.get("searchstring"));
+		for (String row:rows) {
+			System.out.println(input.get("searchstring").toUpperCase().trim());
+			Assert.assertTrue(row.toUpperCase().contains(input.get("searchstring").toUpperCase().trim()),"Row does not match search criteria: " + row + "  "+input.get("searchstring").toUpperCase());
+		}
+		 
+	}
+	
+	@Test
+	public void tc_004_verifyAddUserFormHeader() {
 		if (um == null) {
             um = new UM_UsersLocators(driver);
      }
@@ -25,8 +57,8 @@ public class UserManagementUsersTest extends BasicInitialization {
 	}
 	
 	
-	@Test(dataProvider="getUserData")
-	public void tc_002_verifyAddUserWithMandatoryFields(HashMap<String, String> input) {
+	@Test(dataProvider="getUserMandatoryFieldData")
+	public void tc_005_verifyAddUserWithMandatoryFields(HashMap<String, String> input) {
 		if (um == null) {
             um = new UM_UsersLocators(driver);
      }
@@ -35,7 +67,7 @@ public class UserManagementUsersTest extends BasicInitialization {
 	}
 	
 	@Test(dataProvider="getUserDataMissingFields")
-	public void tc_003_ErrorValidationWithMissingMandatoryFields(HashMap<String, String> input) {
+	public void tc_006_ErrorValidationWithMissingMandatoryFields(HashMap<String, String> input) {
 		if (um == null) {
             um = new UM_UsersLocators(driver);
      }
@@ -44,7 +76,7 @@ public class UserManagementUsersTest extends BasicInitialization {
 	}
 	
 	@Test(dataProvider="getUserDataOptional")
-	public void tc_004_verifyAddUserWithOptionalFields(HashMap<String, String> input) {
+	public void tc_007_verifyAddUserWithOptionalFields(HashMap<String, String> input) {
 		if (um == null) {
             um = new UM_UsersLocators(driver);
      }
@@ -53,7 +85,7 @@ public class UserManagementUsersTest extends BasicInitialization {
 	}
 	
 	@Test(dataProvider="editUserData")
-	public void tc_005_edituserdetails(HashMap<String, String> input) {
+	public void tc_008_edituserdetails(HashMap<String, String> input) {
 		if (um == null) {
             um = new UM_UsersLocators(driver);
      }
@@ -63,9 +95,22 @@ public class UserManagementUsersTest extends BasicInitialization {
 		
 	
 	
+	
 	@DataProvider
-	public Object[][] getUserData() throws IOException {
-		List<HashMap<String, String>> data= getJsonData(System.getProperty("user.dir")+"\\src\\main\\resources\\adduserdata.json");
+	public Object[][] getSerachString() throws IOException {
+	List<HashMap<String, String>> inputdata= getJsonData(System.getProperty("user.dir")+"\\src\\main\\resources\\searchelement.json");
+	Object[][] data = new Object[inputdata.size()][1]; 
+
+    for (int i = 0; i < inputdata.size(); i++) {
+        data[i][0] = inputdata.get(i);
+    }
+    return data;	
+	}
+	
+	
+	@DataProvider
+	public Object[][] getUserMandatoryFieldData() throws IOException {
+		List<HashMap<String, String>> data= getJsonData(System.getProperty("user.dir")+"\\src\\main\\resources\\adduserdata_mandatoryfields.json");
 		return new Object[][] {
 			{data.get(0)}
 		};		
@@ -73,7 +118,7 @@ public class UserManagementUsersTest extends BasicInitialization {
 	
 	@DataProvider
 	public Object[][] getUserDataMissingFields() throws IOException {
-		List<HashMap<String, String>> data= getJsonData(System.getProperty("user.dir")+"\\src\\main\\resources\\adduserdata.json");
+		List<HashMap<String, String>> data= getJsonData(System.getProperty("user.dir")+"\\src\\main\\resources\\adduserdata_mandatoryfields.json");
 		return new Object[][] {
 			{data.get(2)},{data.get(3)},{data.get(4)},{data.get(5)},{data.get(6)}
 		};		

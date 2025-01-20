@@ -13,6 +13,28 @@ import everailabs.ReferenceClasses.BasicInitialization;
 
 public class UserManagementRoleTest extends BasicInitialization{
 	
+	
+	@Test
+	public void verifyColumnsELements() {
+		umr= new UM_RolesLocators(driver);
+		List<String> columnName= umr.verifyColumnName();
+		Assert.assertEquals(columnName.get(0),"Role");
+		Assert.assertEquals(columnName.get(1),"Product");
+		Assert.assertEquals(columnName.get(2),"Assigned Users");
+		Assert.assertEquals(columnName.get(3),"Created On");
+		Assert.assertEquals(columnName.get(4),"Created By");
+		
+	}
+	
+	@Test(dataProvider="getSerachString")
+	public void verifySearch(HashMap<String, String> input) {
+		umr= new UM_RolesLocators(driver);
+		List<String> matchedrows= umr.verifySearchWithRoleName(input.get("searchstring"));
+		for(String matchedrow:matchedrows) {
+			Assert.assertTrue(matchedrow.toLowerCase().contains(input.get("searchstring").toLowerCase().trim()), "Value did not matched");
+		}
+	}
+	
 	@Test
 	public void tc_001_verifyAddRoleFormElements() {
 		umr= new UM_RolesLocators(driver);
@@ -35,6 +57,17 @@ public class UserManagementRoleTest extends BasicInitialization{
 		umr= new UM_RolesLocators(driver);
 		HashMap<String,String> map= umr.addNewRole(input.get("rolename"));
 		Assert.assertEquals(map.get("msg"), "Role already exist with name '"+map.get("role_name")+"' and product '"+map.get("prod_name")+"'", "The final message does not match the expected message.");	
+	}
+	
+	@DataProvider
+	public Object[][] getSerachString() throws IOException {
+	List<HashMap<String, String>> inputdata= getJsonData(System.getProperty("user.dir")+"\\src\\main\\resources\\rolesearchelement.json");
+	Object[][] data = new Object[inputdata.size()][1]; 
+
+    for (int i = 0; i < inputdata.size(); i++) {
+        data[i][0] = inputdata.get(i);
+    }
+    return data;	
 	}
 	
 	@DataProvider

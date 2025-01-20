@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -50,11 +51,13 @@ public class UM_UsersLocators extends AbstractMethodClass {
 
 	@FindBy(css = "ul.css-1gmmn5h li div div:nth-last-child(1) span")
 	List<WebElement> menuitems;
-	
-	@FindBy(xpath="//div[contains(@class,'css-1t374vw')]/div/div/div/div/div")
+
+	@FindBy(xpath = "//div[contains(@class,'css-1t374vw')]/div/div/div/div/div")
 	List<WebElement> columns;
 
-	
+	@FindBy(css = "svg.MuiCircularProgress-svg")
+	WebElement loader;
+
 	@FindBy(xpath = "//div[@class='MuiStack-root css-1yls19f']/div/div/button")
 	WebElement adduser;
 
@@ -156,76 +159,115 @@ public class UM_UsersLocators extends AbstractMethodClass {
 
 	@FindBy(css = "div.css-127h8j3")
 	WebElement confirmationmsg;
-	
-	
+
+	@FindBy(css = "input.css-1y3tnm8")
+	WebElement searchbox;
+
+	@FindBy(css = "div.MuiDataGrid-row--dynamicHeight")
+	List<WebElement> rows;
+
+	@FindBy(xpath = "//button[@aria-label='Go to next page']")
+	List<WebElement> nextButton;
+
 	public HashMap<String, String> verifyHeaderandMenuUIElements() {
 		WebElementVisibleWait(logo);
 		if (logo.isDisplayed()) {
 			System.out.println("EverAI Logo is present");
-		}else {throw new AssertionError ("EverAI Logo is not present on Dashboard");}
-		
+		} else {
+			throw new AssertionError("EverAI Logo is not present on Dashboard");
+		}
+
 		if (menuhidebutton.isDisplayed()) {
 			menuhidebutton.click();
 			System.out.println("Hiding menu button is present");
-		}else {throw new AssertionError ("Hiding menu button is not present on Dashboard");}
-		
-		menuhidebutton.click();	
-		
+		} else {
+			throw new AssertionError("Hiding menu button is not present on Dashboard");
+		}
+		menuhidebutton.click();
 		int k = 0;
 		for (WebElement icon : icons) {
-		    if (icon.isDisplayed()) {
-		        k++;
-		    } else {
-		        throw new AssertionError("An icon is not displayed.");
-		    }
-		} System.out.println(k + " header icons are present");
-			
+			if (icon.isDisplayed()) {
+				k++;
+			} else {
+				throw new AssertionError("An icon is not displayed.");
+			}
+		}
+		System.out.println(k + " header icons are present");
 		WebElementListVisibleWait(sec);
 		List<String> secTexts = new ArrayList<>();
 		for (WebElement secitem : sec) {
-		 String sectext= secitem.getText();
-		 secTexts.add(sectext); 
-		}				
-		
+			String sectext = secitem.getText();
+			secTexts.add(sectext);
+		}
+
 		if (profileicon.isDisplayed()) {
 			System.out.println("Profile icon is present");
-		}else {throw new AssertionError ("Profile Icon is not present on Dashboard");}
-		
+		} else {
+			throw new AssertionError("Profile Icon is not present on Dashboard");
+		}
+
 		List<String> menu = new ArrayList<>();
-		if (menuplaceholder.isDisplayed()) {			
-			System.out.println("Navigation menu is present");			
+		if (menuplaceholder.isDisplayed()) {
+			System.out.println("Navigation menu is present");
 			for (WebElement menuitem : menuitems) {
 				String menutext = menuitem.getText();
-				System.out.println(menutext +"is present" + menuitems );
+				System.out.println(menutext + "is present" + menuitems);
 				menu.add(menutext);
 			}
-		}else {throw new AssertionError ("Navigation Menu is not present on Dashboard");}		
-				
+		} else {
+			throw new AssertionError("Navigation Menu is not present on Dashboard");
+		}
+
 		HashMap<String, String> Map = new HashMap<>();
 		Map.put("Name", secTexts.get(0));
 		Map.put("Role", secTexts.get(1));
 		Map.put("item1", menu.get(0));
-		Map.put("item2", menu.get(1));	
+		Map.put("item2", menu.get(1));
 		Map.put("item3", menu.get(2));
 		Map.put("item4", menu.get(3));
 		Map.put("item5", menu.get(4));
 		Map.put("item6", menu.get(5));
 		return Map;
 	}
-	
-	
-	
-	public void verifyTableElements() {
-		WebElementListVisibleWait(columns);
-		 System.out.println("Total visible columns: " + columns.size());
-		List<String> columnnamelist=new ArrayList<>();
-		for(WebElement column:columns) {
-			String columnname=column.getText();
+
+	public void verifyTableElements_ColumnName() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", ellipsismenu);
+		WebElementVisibleWait(ellipsismenu);
+		System.out.println("Total visible columns: " + columns.size());
+		List<String> columnnamelist = new ArrayList<>();
+		for (WebElement column : columns) {
+			String columnname = column.getText();
 			System.out.println(columnname);
+		}
 	}
+
+	public List<String> verifySearchWithNameOrEmail(String input) {
+		WebElementVisibleWait(searchbox);
+		WebElementListVisibleWait(rows);
+		searchbox.clear();
+		searchbox.sendKeys(input);
+		searchbox.sendKeys(Keys.RETURN);
+		WebElementInvisibleWait(loader);		
+		String inputstring= input.contains("@") ? "div div p:nth-child(2)" : "div div p:nth-child(1)";		
+		List<String> allMatchingRows = new ArrayList<>();
+		boolean hasNextPage = true;
+				while (hasNextPage) {
+			for (WebElement row : rows) {
+				String rowData = row.findElement(By.cssSelector(inputstring)).getText();
+				System.out.println("Row data: " + rowData);
+				allMatchingRows.add(rowData);
+			}
+			if (!nextButton.isEmpty() && nextButton.get(0).isEnabled()) {
+				System.out.println("Navigating to the next page");
+				nextButton.get(0).click();
+				WebElementInvisibleWait(loader);
+			} else {
+				hasNextPage = false;
+			}
+		}
 		
-		
-		
+		return allMatchingRows;
 	}
 
 	public HashMap<String, String> addUserForm() {

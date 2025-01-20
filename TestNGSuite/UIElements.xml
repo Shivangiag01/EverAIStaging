@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="everailabs.ReferenceClasses.Listeners"></listener>
+	</listeners>
+	<test thread-count="1" name="Test">
+		<classes>
+			<class name="everailabs.EverAIDashboard.LoginValidation">
+			<methods>
+			<include name="tc_003_login"></include>
+			</methods>
+			</class>
+			<class name="everailabs.EverAIDashboard.UserManagementUsersTest">
+			<methods>
+			<include name="tc_003_verifySearchWithNameOrEmail"></include>
+			</methods>
+			</class>
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->

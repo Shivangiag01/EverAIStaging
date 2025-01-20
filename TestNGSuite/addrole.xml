@@ -13,8 +13,7 @@
 			</class>
 			<class name="everailabs.EverAIDashboard.UserManagementRoleTest">
 			<methods>
-			<include name="tc_001_verifyAddRoleFormElements"></include>
-			<include name="tc_002_verifyAddNewRole"></include>
+			<include name="verifySearch"></include>
 			</methods>
 			</class>
 		</classes>

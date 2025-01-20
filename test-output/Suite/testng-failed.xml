@@ -4,16 +4,16 @@
   <listeners>
     <listener class-name="everailabs.ReferenceClasses.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Login and Add New Role(failed)">
     <classes>
-      <class name="everailabs.EverAIDashboard.UM_UIValidations">
+      <class name="everailabs.EverAIDashboard.UserManagementRoleTest">
         <methods>
           <include name="launchApp"/>
           <include name="closeBrowser"/>
-          <include name="tc_002_verifyTableElements"/>
           <include name="exit"/>
+          <include name="verifySearch" invocation-numbers="4 5"/>
         </methods>
-      </class> <!-- everailabs.EverAIDashboard.UM_UIValidations -->
+      </class> <!-- everailabs.EverAIDashboard.UserManagementRoleTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Login and Add New Role(failed) -->
 </suite> <!-- Failed suite [Suite] -->

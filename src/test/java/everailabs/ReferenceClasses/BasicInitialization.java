@@ -65,7 +65,7 @@ public class BasicInitialization {
 		if (driver == null || !sharedBrowserSession) {
 			driver = browserSelection();
 			driver.manage().window().maximize();
-			driver.get("https://calm-sand-0ddc4e70f-preview.eastus2.4.azurestaticapps.net");
+			driver.get("https://green-cliff-0a000fe0f-preview.eastus2.4.azurestaticapps.net");
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			lp = new LoginPageLocators(driver);
 			um= new UM_UsersLocators(driver);

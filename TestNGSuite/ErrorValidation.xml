@@ -7,9 +7,6 @@
 	<test thread-count="1" name="Test">
 		<classes>
 			<class name="everailabs.EverAIDashboard.ErrorLoginValidation">
-			<methods>
-			<include name="tc_004_verifyDeactivatedAccount"></include>
-			</methods>
 			</class>			
 		</classes>
 	</test> <!--
