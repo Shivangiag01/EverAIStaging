@@ -13,7 +13,7 @@
 			</class>
 			<class name="everailabs.EverAIDashboard.UserManagementRoleTest">
 			<methods>
-			<include name="verifySearch"></include>
+			<include name="tc_007_VerifyErrorForEditingRoleWithExistingRoleName"></include>
 			</methods>
 			</class>
 		</classes>

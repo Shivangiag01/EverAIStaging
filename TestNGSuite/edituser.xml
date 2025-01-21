@@ -11,9 +11,9 @@
                     <include name="tc_003_login" />
                 </methods>
 			</class>
-			<class name="everailabs.EverAIDashboard.UserManagementTest">
+			<class name="everailabs.EverAIDashboard.UserManagementUsersTest">
 			 <methods>
-                    <include name="tc_005_edituserdetails" />
+                    <include name="tc_008_edituserdetails" />
                   </methods>
 			</class>
 		</classes>

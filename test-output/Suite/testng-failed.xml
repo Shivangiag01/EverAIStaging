@@ -9,9 +9,10 @@
       <class name="everailabs.EverAIDashboard.UserManagementRoleTest">
         <methods>
           <include name="launchApp"/>
+          <include name="initializeClass"/>
           <include name="closeBrowser"/>
           <include name="exit"/>
-          <include name="verifySearch" invocation-numbers="4 5"/>
+          <include name="tc_007_VerifyErrorForEditingRoleWithExistingRoleName"/>
         </methods>
       </class> <!-- everailabs.EverAIDashboard.UserManagementRoleTest -->
     </classes>

@@ -78,7 +78,9 @@ public class UM_RolesLocators extends AbstractMethodClass {
 	@FindBy(css="div.MuiDataGrid-row--dynamicHeight")
 	List<WebElement> rows;
 	
-	
+	@FindBy(xpath = "//button[@id='basic-button-undefined']")
+	WebElement ellipsismenu;
+		
 	@FindBy(css="div.css-8qhrww")
 	WebElement noData;
 
@@ -146,6 +148,7 @@ public class UM_RolesLocators extends AbstractMethodClass {
 
 	public HashMap<String, String> addNewRole(String role) {
 		String prodname = null;
+		roletab.click();
 		WebElementVisibleWait(addrole);
 		addrole.click();
 		WebElementVisibleWait(roleform);
@@ -174,4 +177,38 @@ public class UM_RolesLocators extends AbstractMethodClass {
 		return map;
 	}
 
+	@FindBy(xpath="//li[@role='menuitem']")
+	WebElement editrole;
+	
+	@FindBy(xpath="//button[@type='submit']")
+	WebElement save;
+	
+	@FindBy(xpath="//input[@name='product_name']")
+	WebElement selectedprodName;
+	
+	
+	
+	public HashMap<String,String> editRole(String roleName) {
+		roletab.click();
+		WebElementInvisibleWait(loader);		
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", ellipsismenu);
+		WebElementVisibleWait(ellipsismenu);
+		js.executeScript("arguments[0].click();", ellipsismenu);
+		editrole.click();
+		WebElementVisibleWait(rolename);
+		rolename.sendKeys(Keys.CONTROL+ "a");
+		rolename.sendKeys(Keys.DELETE);
+		rolename.sendKeys(roleName);
+		String prodname=selectedprodName.getDomAttribute("value");
+		js.executeScript("window.scrollBy(0, 200);");
+		System.out.println("Scrolling");
+		js.executeScript("arguments[0].click();", save);
+		String fmsg = confirmationmsg.getText();
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("role_name", roleName);
+		map.put("prod_name", prodname);
+		map.put("msg", fmsg);
+		return map;
+	}
 }

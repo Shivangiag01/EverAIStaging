@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-20T19:18:00 IST" name="Suite" finished-at="2025-01-20T19:19:16 IST" duration-ms="76060">
+  <suite started-at="2025-01-21T15:25:45 IST" name="Suite" finished-at="2025-01-21T15:26:06 IST" duration-ms="21054">
     <groups>
     </groups>
-    <test started-at="2025-01-20T19:18:00 IST" name="Login and Add New Role" finished-at="2025-01-20T19:19:16 IST" duration-ms="76060">
+    <test started-at="2025-01-21T15:25:45 IST" name="Login and Add New Role" finished-at="2025-01-21T15:26:06 IST" duration-ms="21054">
       <class name="everailabs.EverAIDashboard.LoginValidation">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@3214ee6]" started-at="2025-01-20T19:18:01 IST" name="launchApp" finished-at="2025-01-20T19:18:07 IST" duration-ms="6379" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@74287ea3]" started-at="2025-01-21T15:25:45 IST" name="launchApp" finished-at="2025-01-21T15:25:51 IST" duration-ms="6187" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="tc_003_login(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@3214ee6]" started-at="2025-01-20T19:18:07 IST" name="tc_003_login" data-provider="getData1" finished-at="2025-01-20T19:18:09 IST" duration-ms="1885" status="PASS">
+        <test-method signature="tc_003_login(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@74287ea3]" started-at="2025-01-21T15:25:51 IST" name="tc_003_login" data-provider="getData1" finished-at="2025-01-21T15:25:53 IST" duration-ms="1928" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,127 +22,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_003_login -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@3214ee6]" started-at="2025-01-20T19:18:09 IST" name="exit" finished-at="2025-01-20T19:18:09 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@74287ea3]" started-at="2025-01-21T15:25:53 IST" name="exit" finished-at="2025-01-21T15:25:53 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@3214ee6]" started-at="2025-01-20T19:19:17 IST" name="closeBrowser" finished-at="2025-01-20T19:19:17 IST" duration-ms="343" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@74287ea3]" started-at="2025-01-21T15:26:07 IST" name="closeBrowser" finished-at="2025-01-21T15:26:07 IST" duration-ms="301" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- everailabs.EverAIDashboard.LoginValidation -->
       <class name="everailabs.EverAIDashboard.UserManagementRoleTest">
-        <test-method signature="verifySearch(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:09 IST" name="verifySearch" data-provider="getSerachString" finished-at="2025-01-20T19:18:21 IST" duration-ms="12512" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{searchstring=MANAGER}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySearch -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:09 IST" name="launchApp" finished-at="2025-01-20T19:18:09 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@38af9828]" started-at="2025-01-21T15:25:53 IST" name="launchApp" finished-at="2025-01-21T15:25:53 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:21 IST" name="exit" finished-at="2025-01-20T19:18:21 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="initializeClass()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@38af9828]" started-at="2025-01-21T15:25:53 IST" name="initializeClass" finished-at="2025-01-21T15:25:53 IST" duration-ms="29" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- exit -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:21 IST" name="launchApp" finished-at="2025-01-20T19:18:21 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- initializeClass -->
+        <test-method signature="tc_007_VerifyErrorForEditingRoleWithExistingRoleName()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@38af9828]" started-at="2025-01-21T15:25:53 IST" name="tc_007_VerifyErrorForEditingRoleWithExistingRoleName" finished-at="2025-01-21T15:26:06 IST" duration-ms="12714" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="verifySearch(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:21 IST" name="verifySearch" data-provider="getSerachString" finished-at="2025-01-20T19:18:32 IST" duration-ms="10764" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{searchstring=manager}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySearch -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:32 IST" name="exit" finished-at="2025-01-20T19:18:32 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:32 IST" name="launchApp" finished-at="2025-01-20T19:18:32 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="verifySearch(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:32 IST" name="verifySearch" data-provider="getSerachString" finished-at="2025-01-20T19:18:43 IST" duration-ms="11018" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{searchstring=MANAger}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySearch -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:43 IST" name="exit" finished-at="2025-01-20T19:18:43 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:43 IST" name="launchApp" finished-at="2025-01-20T19:18:43 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="verifySearch(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:43 IST" name="verifySearch" data-provider="getSerachString" finished-at="2025-01-20T19:18:54 IST" duration-ms="11109" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{searchstring=mana}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySearch -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:54 IST" name="exit" finished-at="2025-01-20T19:18:54 IST" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:54 IST" name="launchApp" finished-at="2025-01-20T19:18:54 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method signature="verifySearch(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:18:54 IST" name="verifySearch" data-provider="getSerachString" finished-at="2025-01-20T19:19:05 IST" duration-ms="11084" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{searchstring=    MANAGER}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySearch -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:19:05 IST" name="exit" finished-at="2025-01-20T19:19:05 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-        <test-method signature="verifySearch(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:19:05 IST" name="verifySearch" data-provider="getSerachString" finished-at="2025-01-20T19:19:16 IST" duration-ms="11062" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{searchstring=   MANAGER    }]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySearch -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:19:05 IST" name="launchApp" finished-at="2025-01-20T19:19:05 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@4149c063]" started-at="2025-01-20T19:19:16 IST" name="exit" finished-at="2025-01-20T19:19:16 IST" duration-ms="6" status="PASS">
+        </test-method> <!-- tc_007_VerifyErrorForEditingRoleWithExistingRoleName -->
+        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@38af9828]" started-at="2025-01-21T15:26:06 IST" name="exit" finished-at="2025-01-21T15:26:06 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->

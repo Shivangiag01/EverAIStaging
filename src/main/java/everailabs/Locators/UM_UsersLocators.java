@@ -103,7 +103,7 @@ public class UM_UsersLocators extends AbstractMethodClass {
 	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/li")
 	List<WebElement> deptList;
 
-	@FindBy(css = "button.css-15guoxn")
+	@FindBy(css = "button[aria-label='Choose date']")
 	WebElement calendar;
 
 	@FindBy(xpath = "//div[contains(@class,'css-naa195')]/div//button[contains(@class,'css-1fowdqw')]")
@@ -151,11 +151,9 @@ public class UM_UsersLocators extends AbstractMethodClass {
 	@FindBy(xpath = "//div[contains(@class,'css-1xdhyk6')]")
 	WebElement utable;
 
-	@FindBy(xpath = "//button[contains(@class,'css-rdurn1')]")
+	@FindBy(xpath = "//button[@id='basic-button-undefined']")
 	WebElement ellipsismenu;
 
-	@FindBy(xpath = "//div[contains(@class,'css-1vouojk')]")
-	WebElement userdata;
 
 	@FindBy(css = "div.css-127h8j3")
 	WebElement confirmationmsg;
@@ -436,8 +434,7 @@ public class UM_UsersLocators extends AbstractMethodClass {
 
 	public String editUser(String first_name, String last_name, String user_email, String code, String contact,
 			String date, String div, String classid, String did, String deptid) {
-		WebElementVisibleWait(userdata);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		WebElementInvisibleWait(loader);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", ellipsismenu);
 		WebElementVisibleWait(ellipsismenu);

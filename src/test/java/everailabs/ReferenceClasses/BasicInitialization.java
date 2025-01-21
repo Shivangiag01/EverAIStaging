@@ -68,8 +68,6 @@ public class BasicInitialization {
 			driver.get("https://green-cliff-0a000fe0f-preview.eastus2.4.azurestaticapps.net");
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			lp = new LoginPageLocators(driver);
-			um= new UM_UsersLocators(driver);
-			
 		}
 	}
 
