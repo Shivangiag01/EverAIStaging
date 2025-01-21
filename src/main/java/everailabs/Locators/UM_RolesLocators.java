@@ -77,6 +77,10 @@ public class UM_RolesLocators extends AbstractMethodClass {
 	
 	@FindBy(css="div.MuiDataGrid-row--dynamicHeight")
 	List<WebElement> rows;
+	
+	
+	@FindBy(css="div.css-8qhrww")
+	WebElement noData;
 
 	public List<String> verifyColumnName() {
 		roletab.click();
@@ -100,10 +104,10 @@ public class UM_RolesLocators extends AbstractMethodClass {
 		searchbox.clear();
 		searchbox.sendKeys(input);
 		searchbox.sendKeys(Keys.RETURN);
-		WebElementInvisibleWait(loader);		
-		
+		WebElementInvisibleWait(loader);	
 		List<String> allMatchingRows = new ArrayList<>();
 		boolean hasNextPage = true;
+		
 				while (hasNextPage) {
 			for (WebElement row : rows) {
 				String rowData = row.findElement(By.cssSelector("div[data-field='name'] div span")).getText();
@@ -121,6 +125,7 @@ public class UM_RolesLocators extends AbstractMethodClass {
 		}
 		
 		return allMatchingRows;
+		
 	}		
 		
 
