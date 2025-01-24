@@ -122,13 +122,13 @@ public class UM_UsersLocators extends AbstractMethodClass {
 	WebElement reporting;
 
 	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/li[5]")
-	WebElement selectuser;
+	WebElement reportingmanager;
 
 	@FindBy(xpath = "//input[contains(@class,'css-uu1mj6')]")
 	WebElement assignrole;
 
-	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/div[1]")
-	WebElement firstelement;
+	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/div")
+	List<WebElement> productlist;
 
 	@FindBy(xpath = "//ul[contains(@class,'css-ubifyk')]/div/h6")
 	List<WebElement> rolelist;
@@ -166,6 +166,8 @@ public class UM_UsersLocators extends AbstractMethodClass {
 
 	@FindBy(xpath = "//button[@aria-label='Go to next page']")
 	List<WebElement> nextButton;
+	
+	
 
 	public HashMap<String, String> verifyHeaderandMenuUIElements() {
 		WebElementVisibleWait(logo);
@@ -228,7 +230,7 @@ public class UM_UsersLocators extends AbstractMethodClass {
 		return Map;
 	}
 
-	public void verifyTableElements_ColumnName() {
+	public List<String> verifyTableElements_ColumnName() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", ellipsismenu);
 		WebElementVisibleWait(ellipsismenu);
@@ -237,7 +239,11 @@ public class UM_UsersLocators extends AbstractMethodClass {
 		for (WebElement column : columns) {
 			String columnname = column.getText();
 			System.out.println(columnname);
+			columnnamelist.add(columnname);
 		}
+		
+		return columnnamelist;
+		
 	}
 
 	public List<String> verifySearchWithNameOrEmail(String input) {
@@ -267,6 +273,7 @@ public class UM_UsersLocators extends AbstractMethodClass {
 		
 		return allMatchingRows;
 	}
+	
 
 	public HashMap<String, String> addUserForm() {
 		adduser.click();
@@ -282,6 +289,7 @@ public class UM_UsersLocators extends AbstractMethodClass {
 
 	public String addUserWithMandatoryFields(String first_name, String last_name, String user_email, String reportingTo,
 			String aroles) {
+		Random random = new Random();
 		adduser.click();
 		WebElementVisibleWait(form);
 		fname.sendKeys(first_name);
@@ -289,17 +297,21 @@ public class UM_UsersLocators extends AbstractMethodClass {
 		email.sendKeys(user_email);
 		if (reportingTo == null) {
 			reporting.click();
-			WebElementVisibleWait(selectuser);
-			selectuser.click();
+			WebElementVisibleWait(reportingmanager);
+			reportingmanager.click();
 		}
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		if (aroles == null) {
 			assignrole.click();
-			Actions act = new Actions(driver);
-			act.moveToElement(firstelement).perform();
+			WebElementListVisibleWait(productlist);
+			if(!productlist.isEmpty()) {
+				int randomIndex1=random.nextInt(productlist.size());
+				WebElement randomProduct=productlist.get(randomIndex1);
+				Actions act = new Actions(driver);
+				act.moveToElement(randomProduct).perform();
+			}			
 			WebElementListVisibleWait(rolelist);
-			if (!rolelist.isEmpty()) {
-				Random random = new Random();
+			if (!rolelist.isEmpty()) {				
 				int randomIndex = random.nextInt(rolelist.size());
 				WebElement randomElement = rolelist.get(randomIndex);
 				randomElement.click();
@@ -323,19 +335,24 @@ public class UM_UsersLocators extends AbstractMethodClass {
 		System.out.println("value of reprting field " + reportingTo);
 		if (reportingTo == null) {
 			reporting.click();
-			WebElementVisibleWait(selectuser);
-			selectuser.click();
+			WebElementVisibleWait(reportingmanager);
+			reportingmanager.click();
 		} else {
 			reporting.sendKeys(reportingTo);
 		}
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		Random random = new Random();
 		if (aroles == null) {
 			assignrole.click();
-			Actions act = new Actions(driver);
-			act.moveToElement(firstelement).perform();
+			WebElementListVisibleWait(productlist);
+			if(!productlist.isEmpty()) {
+				int randomIndex1=random.nextInt(productlist.size());
+				WebElement randomProduct=productlist.get(randomIndex1);
+				Actions act = new Actions(driver);
+				act.moveToElement(randomProduct).perform();
+			}	
 			WebElementListVisibleWait(rolelist);
-			if (!rolelist.isEmpty()) {
-				Random random = new Random();
+			if (!rolelist.isEmpty()) {				
 				int randomIndex = random.nextInt(rolelist.size());
 				WebElement randomElement = rolelist.get(randomIndex);
 				randomElement.click();
@@ -413,12 +430,16 @@ public class UM_UsersLocators extends AbstractMethodClass {
 		internalID.sendKeys(did);
 		externalID.sendKeys(deptid);
 		reporting.click();
-		WebElementVisibleWait(selectuser);
-		selectuser.click();
+		WebElementVisibleWait(reportingmanager);
+		reportingmanager.click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		assignrole.click();
-		Actions act = new Actions(driver);
-		act.moveToElement(firstelement).perform();
+			WebElementListVisibleWait(productlist);
+			if(!productlist.isEmpty()) {
+				WebElement randomProduct=productlist.get(new Random().nextInt(productlist.size()));
+				Actions act = new Actions(driver);
+				act.moveToElement(randomProduct).perform();
+			}
 		WebElementListVisibleWait(rolelist);
 		if (!rolelist.isEmpty()) {
 			WebElement randomRole = rolelist.get(new Random().nextInt(rolelist.size()));
@@ -511,8 +532,8 @@ public class UM_UsersLocators extends AbstractMethodClass {
 		internalID.sendKeys(did);
 		externalID.sendKeys(deptid);
 		reporting.click();
-		WebElementVisibleWait(selectuser);
-		selectuser.click();
+		WebElementVisibleWait(reportingmanager);
+		reportingmanager.click();
 		int srolescount = selectedrolelist.size();
 		WebElementClickable(crossforexistingroles);
 		if (crossforexistingroles.isDisplayed()) {
@@ -521,7 +542,12 @@ public class UM_UsersLocators extends AbstractMethodClass {
 			}
 		}
 		assignrole.click();
-		actions.moveToElement(firstelement).perform();
+		WebElementListVisibleWait(productlist);
+		if(!productlist.isEmpty()) {
+			WebElement randomProduct=productlist.get(new Random().nextInt(productlist.size()));
+			Actions act = new Actions(driver);
+			act.moveToElement(randomProduct).perform();
+		}
 		WebElementListVisibleWait(rolelist);
 		for (WebElement role : rolelist) {
 			String rolename = role.getText();

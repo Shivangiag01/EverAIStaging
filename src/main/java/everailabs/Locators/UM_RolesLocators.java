@@ -83,6 +83,17 @@ public class UM_RolesLocators extends AbstractMethodClass {
 		
 	@FindBy(css="div.css-8qhrww")
 	WebElement noData;
+	
+	@FindBy(xpath="//li[@role='menuitem']")
+	WebElement editrole;
+	
+	@FindBy(xpath="//button[@type='submit']")
+	WebElement save;
+	
+	@FindBy(xpath="//input[@name='product_name']")
+	WebElement selectedprodName;
+	
+	JavascriptExecutor js=(JavascriptExecutor)driver;
 
 	public List<String> verifyColumnName() {
 		roletab.click();
@@ -161,7 +172,6 @@ public class UM_RolesLocators extends AbstractMethodClass {
 				prod.click();
 				prodname = prod.getText();
 				System.out.println("creating for...  " + prodname);
-				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("window.scrollBy(0, 200);");
 				System.out.println("Scrolling");
 				js.executeScript("arguments[0].click();", createbutton);
@@ -177,21 +187,11 @@ public class UM_RolesLocators extends AbstractMethodClass {
 		return map;
 	}
 
-	@FindBy(xpath="//li[@role='menuitem']")
-	WebElement editrole;
-	
-	@FindBy(xpath="//button[@type='submit']")
-	WebElement save;
-	
-	@FindBy(xpath="//input[@name='product_name']")
-	WebElement selectedprodName;
-	
-	
+
 	
 	public HashMap<String,String> editRole(String roleName) {
 		roletab.click();
-		WebElementInvisibleWait(loader);		
-		JavascriptExecutor js=(JavascriptExecutor)driver;
+		WebElementInvisibleWait(loader);			
 		js.executeScript("arguments[0].scrollIntoView(true);", ellipsismenu);
 		WebElementVisibleWait(ellipsismenu);
 		js.executeScript("arguments[0].click();", ellipsismenu);

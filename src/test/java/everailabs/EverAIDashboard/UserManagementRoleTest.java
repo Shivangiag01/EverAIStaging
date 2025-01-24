@@ -21,7 +21,7 @@ public class UserManagementRoleTest extends BasicInitialization{
 	}
 	
 	@Test
-	public void tc_001_verifyColumnsELements() {		
+	public void tc_001_verifyColumnsElements() {		
 		List<String> columnName= umr.verifyColumnName();
 		Assert.assertEquals(columnName.get(0),"Role");
 		Assert.assertEquals(columnName.get(1),"Product");
@@ -55,7 +55,7 @@ public class UserManagementRoleTest extends BasicInitialization{
 	
 	
 	@Test(dataProvider="getRoleData")
-	public void tc_005_VerifyErroronExistingRole(HashMap<String, String> input) {
+	public void tc_005_VerifyErroronExistingRoleName(HashMap<String, String> input) {
 		HashMap<String,String> map= umr.addNewRole(input.get("rolename"));
 		Assert.assertEquals(map.get("msg"), "Role already exist with name '"+map.get("role_name")+"' and product '"+map.get("prod_name")+"'", "The final message does not match the expected message.");	
 	}

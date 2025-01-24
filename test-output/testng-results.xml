@@ -1,17 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-21T15:25:45 IST" name="Suite" finished-at="2025-01-21T15:26:06 IST" duration-ms="21054">
+  <suite started-at="2025-01-24T11:30:33 IST" name="Suite" finished-at="2025-01-24T11:30:42 IST" duration-ms="9426">
     <groups>
     </groups>
-    <test started-at="2025-01-21T15:25:45 IST" name="Login and Add New Role" finished-at="2025-01-21T15:26:06 IST" duration-ms="21054">
-      <class name="everailabs.EverAIDashboard.LoginValidation">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@74287ea3]" started-at="2025-01-21T15:25:45 IST" name="launchApp" finished-at="2025-01-21T15:25:51 IST" duration-ms="6187" status="PASS">
+    <test started-at="2025-01-24T11:30:33 IST" name="Users Dashboard Validation" finished-at="2025-01-24T11:30:42 IST" duration-ms="9426">
+      <class name="everailabs.EverAIDashboard.UserManagementUsersTest">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementUsersTest@53f3bdbd]" started-at="2025-01-24T11:30:39 IST" name="launchApp" finished-at="2025-01-24T11:30:39 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="tc_003_login(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@74287ea3]" started-at="2025-01-21T15:25:51 IST" name="tc_003_login" data-provider="getData1" finished-at="2025-01-21T15:25:53 IST" duration-ms="1928" status="PASS">
+        <test-method is-config="true" signature="initializeClass()[pri:0, instance:everailabs.EverAIDashboard.UserManagementUsersTest@53f3bdbd]" started-at="2025-01-24T11:30:39 IST" name="initializeClass" finished-at="2025-01-24T11:30:39 IST" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeClass -->
+        <test-method signature="tc_005_verifyAddUserWithMandatoryFields(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.UserManagementUsersTest@53f3bdbd]" started-at="2025-01-24T11:30:39 IST" name="tc_005_verifyAddUserWithMandatoryFields" data-provider="getUserMandatoryFieldData" finished-at="2025-01-24T11:30:42 IST" duration-ms="3364" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{firstname=Robert, reprtingTo=null, email=robert.brown@example.com, assignroles=null, lastname=Brown}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The final message does not match the expected message. expected [New User Added Successfully] but found [User with email 'robert.brown@example.com' already exists]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The final message does not match the expected message. expected [New User Added Successfully] but found [User with email 'robert.brown@example.com' already exists]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at everailabs.EverAIDashboard.UserManagementUsersTest.tc_005_verifyAddUserWithMandatoryFields(UserManagementUsersTest.java:72)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc_005_verifyAddUserWithMandatoryFields -->
+        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementUsersTest@53f3bdbd]" started-at="2025-01-24T11:30:42 IST" name="exit" finished-at="2025-01-24T11:30:42 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exit -->
+      </class> <!-- everailabs.EverAIDashboard.UserManagementUsersTest -->
+      <class name="everailabs.EverAIDashboard.LoginValidation">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@68746f22]" started-at="2025-01-24T11:30:33 IST" name="launchApp" finished-at="2025-01-24T11:30:37 IST" duration-ms="4050" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method signature="tc_003_login(java.util.HashMap)[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@68746f22]" started-at="2025-01-24T11:30:37 IST" name="tc_003_login" data-provider="getData1" finished-at="2025-01-24T11:30:38 IST" duration-ms="1692" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,33 +88,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_003_login -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@74287ea3]" started-at="2025-01-21T15:25:53 IST" name="exit" finished-at="2025-01-21T15:25:53 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@68746f22]" started-at="2025-01-24T11:30:38 IST" name="exit" finished-at="2025-01-24T11:30:38 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@74287ea3]" started-at="2025-01-21T15:26:07 IST" name="closeBrowser" finished-at="2025-01-21T15:26:07 IST" duration-ms="301" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:everailabs.EverAIDashboard.LoginValidation@68746f22]" started-at="2025-01-24T11:30:42 IST" name="closeBrowser" finished-at="2025-01-24T11:30:42 IST" duration-ms="152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- everailabs.EverAIDashboard.LoginValidation -->
-      <class name="everailabs.EverAIDashboard.UserManagementRoleTest">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@38af9828]" started-at="2025-01-21T15:25:53 IST" name="launchApp" finished-at="2025-01-21T15:25:53 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method is-config="true" signature="initializeClass()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@38af9828]" started-at="2025-01-21T15:25:53 IST" name="initializeClass" finished-at="2025-01-21T15:25:53 IST" duration-ms="29" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeClass -->
-        <test-method signature="tc_007_VerifyErrorForEditingRoleWithExistingRoleName()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@38af9828]" started-at="2025-01-21T15:25:53 IST" name="tc_007_VerifyErrorForEditingRoleWithExistingRoleName" finished-at="2025-01-21T15:26:06 IST" duration-ms="12714" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc_007_VerifyErrorForEditingRoleWithExistingRoleName -->
-        <test-method is-config="true" signature="exit()[pri:0, instance:everailabs.EverAIDashboard.UserManagementRoleTest@38af9828]" started-at="2025-01-21T15:26:06 IST" name="exit" finished-at="2025-01-21T15:26:06 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-      </class> <!-- everailabs.EverAIDashboard.UserManagementRoleTest -->
-    </test> <!-- Login and Add New Role -->
+    </test> <!-- Users Dashboard Validation -->
   </suite> <!-- Suite -->
 </testng-results>

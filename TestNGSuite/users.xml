@@ -4,7 +4,7 @@
 	<listeners>
 		<listener class-name="everailabs.ReferenceClasses.Listeners"></listener>
 	</listeners>
-	<test thread-count="1" name="Login and Add User">
+	<test thread-count="1" name="Users Dashboard Validation">
 		<classes>
 			<class name="everailabs.EverAIDashboard.LoginValidation">
 				<methods>
@@ -13,9 +13,8 @@
 			</class>
 			<class name="everailabs.EverAIDashboard.UserManagementUsersTest">
 				<methods>
-					<include
-						name="tc_001_verifyAddUserFormHeader"></include>
-						<include name="tc_003_ErrorValidationWithMissingMandatoryFields"></include>
+				<include name="tc_005_verifyAddUserWithMandatoryFields"></include>
+				<!--	<exclude name="tc_002_verifyTableElements_ColumnName"></exclude>-->
 					</methods>
 			</class>
 		</classes>

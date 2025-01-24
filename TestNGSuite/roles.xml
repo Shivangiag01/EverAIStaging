@@ -4,17 +4,17 @@
 	<listeners>
 		<listener class-name="everailabs.ReferenceClasses.Listeners"></listener>
 	</listeners>
-	<test thread-count="1" name="Login and Add User">
+	<test thread-count="1" name="Roles Dashboard Validation">
 		<classes>
 			<class name="everailabs.EverAIDashboard.LoginValidation">
 			 <methods>
                     <include name="tc_003_login" />
                 </methods>
 			</class>
-			<class name="everailabs.EverAIDashboard.UserManagementUsersTest">
-			 <methods>
-                    <include name="tc_008_edituserdetails" />
-                  </methods>
+			<class name="everailabs.EverAIDashboard.UserManagementRoleTest">
+			<methods>
+			<include name="tc_007_VerifyErrorForEditingRoleWithExistingRoleName"></include>
+			</methods>
 			</class>
 		</classes>
 	</test> <!--

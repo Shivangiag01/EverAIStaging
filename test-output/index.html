@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\Sagarwal3\Installations\eclipse-workspace\everAiStaging\TestNGSuite\addrole.xml</span>
+                    <span>C:\Users\Sagarwal3\Installations\eclipse-workspace\everAiStaging\TestNGSuite\users.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="everailabs.EverAIDashboard.UserManagementUsersTest" class="method navigator-link" hash-for-method="tc_005_verifyAddUserWithMandatoryFields({firstname=Robert, reprtingTo=null, email=robert.brown@example.com, assignroles=null, lastname=Brown...)">tc_005_verifyAddUserWithMandatoryFields({firstname=Robert, reprtingTo=null, email=robert.brown@example.com, assignroles=null, lastname=Brown...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,11 +118,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="everailabs.EverAIDashboard.LoginValidation" class="method navigator-link" hash-for-method="tc_003_login({password=Password@123, useremail=Shivangi.Agarwal@weareeverise.com, username=Shivangi Agarwal})">tc_003_login({password=Password@123, useremail=Shivangi.Agarwal@weareeverise.com, username=Shivangi Agarwal})</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="everailabs.EverAIDashboard.UserManagementRoleTest" class="method navigator-link" hash-for-method="tc_007_VerifyErrorForEditingRoleWithExistingRoleName">tc_007_VerifyErrorForEditingRoleWithExistingRoleName</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -123,21 +132,27 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">everailabs.EverAIDashboard.UserManagementRoleTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">everailabs.EverAIDashboard.UserManagementUsersTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="tc_007_VerifyErrorForEditingRoleWithExistingRoleName">
-                  </a> <!-- tc_007_VerifyErrorForEditingRoleWithExistingRoleName -->
-                  <span class="method-name">tc_007_VerifyErrorForEditingRoleWithExistingRoleName</span>
+                  <a name="tc_005_verifyAddUserWithMandatoryFields({firstname=Robert, reprtingTo=null, email=robert.brown@example.com, assignroles=null, lastname=Brown...)">
+                  </a> <!-- tc_005_verifyAddUserWithMandatoryFields({firstname=Robert, reprtingTo=null, email=robert.brown@example.com, assignroles=null, lastname=Brown...) -->
+                  <span class="method-name">tc_005_verifyAddUserWithMandatoryFields</span>
+                  <span class="parameters">({firstname=Robert, reprtingTo=null, email=robert.brown@example.com, assignroles=null, lastname=Brown})</span>
+                  <div class="stack-trace">java.lang.AssertionError: The final message does not match the expected message. expected [New User Added Successfully] but found [User with email &apos;robert.brown@example.com&apos; already exists]
+	at everailabs.EverAIDashboard.UserManagementUsersTest.tc_005_verifyAddUserWithMandatoryFields(UserManagementUsersTest.java:72)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -157,7 +172,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Sagarwal3\Installations\eclipse-workspace\everAiStaging\TestNGSuite\addrole.xml</span>
+            <span class="header-content">C:\Users\Sagarwal3\Installations\eclipse-workspace\everAiStaging\TestNGSuite\users.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -167,20 +182,20 @@
   &lt;listeners&gt;
     &lt;listener class-name=&quot;everailabs.ReferenceClasses.Listeners&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;1&quot; name=&quot;Login and Add New Role&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Users Dashboard Validation&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;everailabs.EverAIDashboard.LoginValidation&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;tc_003_login&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- everailabs.EverAIDashboard.LoginValidation --&gt;
-      &lt;class name=&quot;everailabs.EverAIDashboard.UserManagementRoleTest&quot;&gt;
+      &lt;class name=&quot;everailabs.EverAIDashboard.UserManagementUsersTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;tc_007_VerifyErrorForEditingRoleWithExistingRoleName&quot;/&gt;
+          &lt;include name=&quot;tc_005_verifyAddUserWithMandatoryFields&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- everailabs.EverAIDashboard.UserManagementRoleTest --&gt;
+      &lt;/class&gt; &lt;!-- everailabs.EverAIDashboard.UserManagementUsersTest --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Login and Add New Role --&gt;
+  &lt;/test&gt; &lt;!-- Users Dashboard Validation --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -192,7 +207,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Login and Add New Role (2 classes)</span>
+                <span class="test-name">Users Dashboard Validation (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -220,18 +235,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'tc_007_VerifyErrorForEditingRoleWithExistingRoleName')
-data.setCell(0, 2, 'everailabs.EverAIDashboard.UserManagementRoleTest')
-data.setCell(0, 3, 12714);
+data.setCell(0, 1, 'tc_005_verifyAddUserWithMandatoryFields')
+data.setCell(0, 2, 'everailabs.EverAIDashboard.UserManagementUsersTest')
+data.setCell(0, 3, 3364);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'tc_003_login')
 data.setCell(1, 2, 'everailabs.EverAIDashboard.LoginValidation')
-data.setCell(1, 3, 1928);
+data.setCell(1, 3, 1692);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -246,34 +261,36 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">9 ignored methods</span>
+            <span class="header-content">10 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">everailabs.EverAIDashboard.UserManagementRoleTest</span>
+              <span class="ignored-class-name">everailabs.EverAIDashboard.UserManagementUsersTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">tc_008_edituserdetails</span>
+                <br/>
+                <span class="ignored-method-name">tc_004_verifyAddUserFormHeader</span>
+                <br/>
                 <span class="ignored-method-name">closeBrowser</span>
                 <br/>
-                <span class="ignored-method-name">tc_005_VerifyErroronExistingRole</span>
+                <span class="ignored-method-name">tc_006_ErrorValidationWithMissingMandatoryFields</span>
                 <br/>
-                <span class="ignored-method-name">tc_001_verifyColumnsELements</span>
+                <span class="ignored-method-name">tc_001_verifyHeaderandNavigationMenuUIElements</span>
                 <br/>
-                <span class="ignored-method-name">tc_002_verifySearchWithRoleName</span>
+                <span class="ignored-method-name">tc_007_verifyAddUserWithOptionalFields</span>
                 <br/>
-                <span class="ignored-method-name">tc_003_verifyAddRoleFormElements</span>
+                <span class="ignored-method-name">tc_002_verifyTableElements_ColumnName</span>
                 <br/>
-                <span class="ignored-method-name">tc_006_VerifyEditRole</span>
-                <br/>
-                <span class="ignored-method-name">tc_004_verifyAddNewRole</span>
+                <span class="ignored-method-name">tc_003_verifySearchWithNameOrEmail</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
               <span class="ignored-class-name">everailabs.EverAIDashboard.LoginValidation</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">tc_001_VerifyLoginPageElements</span>
-                <br/>
                 <span class="ignored-method-name">tc_002_verifyloginWithValidCreds</span>
+                <br/>
+                <span class="ignored-method-name">tc_001_VerifyLoginPageElements</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -292,37 +309,39 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">tc_003_login({password=Password@123, useremail=Shivangi.Agarwal@weareeverise.com, username=Shivangi Agarwal})</span>
-                <span class="method-start">6188 ms</span>
+                <span class="method-start">4051 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">exit</span>
-                <span class="method-start">8123 ms</span>
+                <span class="method-start">5750 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">everailabs.EverAIDashboard.UserManagementRoleTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">everailabs.EverAIDashboard.UserManagementUsersTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">launchApp</span>
-                <span class="method-start">8125 ms</span>
+                <span class="method-start">5755 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">initializeClass</span>
-                <span class="method-start">8125 ms</span>
+                <span class="method-start">5756 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">tc_007_VerifyErrorForEditingRoleWithExistingRoleName</span>
-                <span class="method-start">8154 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">tc_005_verifyAddUserWithMandatoryFields({firstname=Robert, reprtingTo=null, email=robert.brown@example.com, assignroles=null, lastname=Brown...)</span>
+                <span class="method-start">5767 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">exit</span>
-                <span class="method-start">20871 ms</span>
+                <span class="method-start">9264 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">everailabs.EverAIDashboard.LoginValidation</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">21254 ms</span>
+                <span class="method-start">9487 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

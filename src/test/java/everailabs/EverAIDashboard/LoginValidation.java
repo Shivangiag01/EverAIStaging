@@ -37,7 +37,6 @@ public class LoginValidation extends BasicInitialization{
 		String loggeinuser= lp.verifyLogin(input.get("useremail"), input.get("password"));
 		Assert.assertEquals(loggeinuser, input.get("username"));
 		enableSharedBrowserSession();
-		//um = new UM_UsersPageLocators(driver);
 	}
 	
 	

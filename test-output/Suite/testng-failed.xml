@@ -4,17 +4,17 @@
   <listeners>
     <listener class-name="everailabs.ReferenceClasses.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Login and Add New Role(failed)">
+  <test thread-count="5" name="Users Dashboard Validation(failed)">
     <classes>
-      <class name="everailabs.EverAIDashboard.UserManagementRoleTest">
+      <class name="everailabs.EverAIDashboard.UserManagementUsersTest">
         <methods>
           <include name="launchApp"/>
           <include name="initializeClass"/>
+          <include name="tc_005_verifyAddUserWithMandatoryFields" invocation-numbers="0"/>
           <include name="closeBrowser"/>
           <include name="exit"/>
-          <include name="tc_007_VerifyErrorForEditingRoleWithExistingRoleName"/>
         </methods>
-      </class> <!-- everailabs.EverAIDashboard.UserManagementRoleTest -->
+      </class> <!-- everailabs.EverAIDashboard.UserManagementUsersTest -->
     </classes>
-  </test> <!-- Login and Add New Role(failed) -->
+  </test> <!-- Users Dashboard Validation(failed) -->
 </suite> <!-- Failed suite [Suite] -->

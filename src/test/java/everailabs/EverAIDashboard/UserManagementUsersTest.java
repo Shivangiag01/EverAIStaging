@@ -35,7 +35,16 @@ public class UserManagementUsersTest extends BasicInitialization {
 	
 	@Test
 	public void tc_002_verifyTableElements_ColumnName() {
-		um.verifyTableElements_ColumnName();
+		List<String> listofcolumnsonpage= um.verifyTableElements_ColumnName();
+		Assert.assertEquals(listofcolumnsonpage.get(0), "");
+		Assert.assertEquals(listofcolumnsonpage.get(1), "");
+		Assert.assertEquals(listofcolumnsonpage.get(2), "");
+		Assert.assertEquals(listofcolumnsonpage.get(3), "");
+		Assert.assertEquals(listofcolumnsonpage.get(4), "");
+		Assert.assertEquals(listofcolumnsonpage.get(5), "");
+		Assert.assertEquals(listofcolumnsonpage.get(6), "");
+		Assert.assertEquals(listofcolumnsonpage.get(7), "");
+		Assert.assertEquals(listofcolumnsonpage.get(8), "");
 		 
 	}
 	
@@ -101,6 +110,7 @@ public class UserManagementUsersTest extends BasicInitialization {
 		List<HashMap<String, String>> data= getJsonData(System.getProperty("user.dir")+"\\src\\main\\resources\\adduserdata_mandatoryfields.json");
 		return new Object[][] {
 			{data.get(0)}
+			//,{data.get(1)}
 		};		
 	}
 	
